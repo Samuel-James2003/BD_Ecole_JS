@@ -125,7 +125,7 @@ namespace BD_Ecole_JS
                 else
                 //Modification
                 {
-                    new G_T_Student(sConnection).Modifier(int.Parse(tbId.Text), dtpDob.Value, tbName.Text, tbSurname.Text,  tbEmail.Text, tbYear.Text, tbSection.Text);
+                    new G_T_Student(sConnection).Modifier(int.Parse(tbId.Text), dtpDob.Value, tbName.Text, tbSurname.Text, tbEmail.Text, tbYear.Text, tbSection.Text);
                     dgvStudent.SelectedRows[0].Cells["SName"].Value = tbName.Text + " " + tbSurname.Text;
                     bsStudent.EndEdit();
                 }

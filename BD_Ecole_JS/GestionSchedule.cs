@@ -10,13 +10,13 @@ namespace BD_Ecole_JS
 {
     public partial class GestionSchedule : Form
     {
-        
+
         DataTable dtSchedule;
         BindingSource bsSchedule;
         string sConnection;
         public GestionSchedule()
         {
-            
+
             InitializeComponent();
             sConnection = ConfigurationManager.ConnectionStrings["BD_Ecole_JS.Properties.Settings.ConnectionString_Couche"].ConnectionString;
             FillDGV();
@@ -55,7 +55,7 @@ namespace BD_Ecole_JS
             }
         }
 
-        
+
 
         int Convert_CB_to_Int(string WorkingString)
         {
@@ -76,7 +76,7 @@ namespace BD_Ecole_JS
             List<C_T_Schedule> lTmp = new G_T_Schedule(sConnection).Lire("N");
             foreach (var p in lTmp)
             {
-               
+
                 dtSchedule.Rows.Add(p.ScheduleID, p.SchDuration, p.SchDate.ToShortDateString(), p.SchStart_Time.ToShortTimeString(), p.ClassID, p.CourseID);
             }
             bsSchedule = new BindingSource();
@@ -104,7 +104,7 @@ namespace BD_Ecole_JS
             //startyime is going to behave weirdly
             int iID = new G_T_Schedule(sConnection).Ajouter(duration, date, starttime, ClassID, CourseID);
             tbId.Text = iID.ToString();
-          
+
             int totalMinutes = Convert.ToInt32(duration.Minutes);
             dtSchedule.Rows.Add(totalMinutes, date.ToShortDateString(), starttime.ToString(), ClassID, CourseID);
         }
@@ -153,7 +153,7 @@ namespace BD_Ecole_JS
                 //Ajout
                 {
 
-                    AddSchedule(dtpDuration.Value.TimeOfDay,dtpDate.Value,dtpStartTime.Value,
+                    AddSchedule(dtpDuration.Value.TimeOfDay, dtpDate.Value, dtpStartTime.Value,
                         Convert_CB_to_Int(cbClId.SelectedItem.ToString()), Convert_CB_to_Int(cbCoId.SelectedItem.ToString()));
                 }
                 else
@@ -161,7 +161,7 @@ namespace BD_Ecole_JS
                 {
                     new G_T_Schedule(sConnection).Modifier(int.Parse(tbId.Text), dtpDuration.Value.TimeOfDay, dtpDate.Value, dtpStartTime.Value,
                         Convert_CB_to_Int(cbClId.Text.ToString()), Convert_CB_to_Int(cbCoId.Text.ToString()));
-                    
+
                     bsSchedule.EndEdit();
 
                 }

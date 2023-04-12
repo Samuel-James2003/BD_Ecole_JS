@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BD_Ecole_JS
@@ -16,7 +9,7 @@ namespace BD_Ecole_JS
         {
             InitializeComponent();
         }
-        
+
         void OpenForm(Form form)
         {
             Hide();
@@ -24,7 +17,7 @@ namespace BD_Ecole_JS
             Show();
         }
 
-        
+
 
 
         private void bGCourse_Click(object sender, EventArgs e)

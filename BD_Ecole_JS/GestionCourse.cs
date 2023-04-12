@@ -10,7 +10,7 @@ namespace BD_Ecole_JS
 {
     public partial class GestionCourse : Form
     {
-        
+
         public GestionCourse()
         {
             InitializeComponent();
@@ -32,11 +32,11 @@ namespace BD_Ecole_JS
             }
             if (cbTId.Items.Count == 0)
             {
-                if (MessageBox.Show("No Teacher Added", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)==DialogResult.OK)
+                if (MessageBox.Show("No Teacher Added", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error) == DialogResult.OK)
                 {
                     Close();
                 }
-               
+
             }
         }
 
@@ -151,6 +151,6 @@ namespace BD_Ecole_JS
 
         }
 
-        
+
     }
 }
