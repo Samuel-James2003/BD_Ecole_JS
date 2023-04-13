@@ -56,16 +56,21 @@ namespace BD_Ecole_JS
             dtCourse.Columns.Add(new DataColumn("CoId", Type.GetType("System.Int32")));
             dtCourse.Columns.Add(new DataColumn("CoName"));
             dtCourse.Columns.Add(new DataColumn("TId"));
+            dtCourse.Columns.Add(new DataColumn("TName"));
+
             List<C_T_Course> lTmp = new G_T_Course(sConnection).Lire("N");
             foreach (var p in lTmp)
             {
-                dtCourse.Rows.Add(p.CourseID, p.CoName, p.TeacherID);
+                dtCourse.Rows.Add(p.CourseID, p.CoName, p.TeacherID, TeacherName(p));
             }
             bsCourse = new BindingSource();
             bsCourse.DataSource = dtCourse;
             dgvCourse.DataSource = bsCourse;
         }
-
+        string TeacherName(C_T_Course p)
+        {
+            return new G_T_Teacher(sConnection).Lire_ID(p.TeacherID).TName + " " + new G_T_Teacher(sConnection).Lire_ID(p.TeacherID).TSurname;
+        }
         void Activer(bool lPrincipal)
         {
             dgvCourse.Enabled = lPrincipal;

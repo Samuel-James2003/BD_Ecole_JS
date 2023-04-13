@@ -17,9 +17,6 @@ namespace BD_Ecole_JS
             Show();
         }
 
-
-
-
         private void bGCourse_Click(object sender, EventArgs e)
         {
             OpenForm(new GestionCourse());
@@ -47,7 +44,12 @@ namespace BD_Ecole_JS
 
         private void bGGrade_Click(object sender, EventArgs e)
         {
+            OpenForm(new GestionGrade());
+        }
 
+        private void bGAssocitation_Click(object sender, EventArgs e)
+        {
+            OpenForm(new GestionAssociation());
         }
     }
 }

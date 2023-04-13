@@ -31,6 +31,12 @@ namespace BD_Ecole_JS
         {
             this.scScreen = new System.Windows.Forms.SplitContainer();
             this.dgvStudent = new System.Windows.Forms.DataGridView();
+            this.SId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SDob = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SYear = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SSection = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sButtonText = new System.Windows.Forms.SplitContainer();
             this.bDel = new System.Windows.Forms.Button();
             this.bModi = new System.Windows.Forms.Button();
@@ -52,12 +58,6 @@ namespace BD_Ecole_JS
             this.label1 = new System.Windows.Forms.Label();
             this.bCan = new System.Windows.Forms.Button();
             this.bConf = new System.Windows.Forms.Button();
-            this.SId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SDob = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SYear = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SSection = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.scScreen)).BeginInit();
             this.scScreen.Panel1.SuspendLayout();
             this.scScreen.Panel2.SuspendLayout();
@@ -114,6 +114,62 @@ namespace BD_Ecole_JS
             this.dgvStudent.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvStudent.Size = new System.Drawing.Size(1039, 291);
             this.dgvStudent.TabIndex = 0;
+            // 
+            // SId
+            // 
+            this.SId.DataPropertyName = "SId";
+            this.SId.HeaderText = "StudentID";
+            this.SId.MinimumWidth = 8;
+            this.SId.Name = "SId";
+            this.SId.ReadOnly = true;
+            this.SId.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.SId.Visible = false;
+            this.SId.Width = 119;
+            // 
+            // SName
+            // 
+            this.SName.DataPropertyName = "SName";
+            this.SName.HeaderText = "Student Name ";
+            this.SName.MinimumWidth = 8;
+            this.SName.Name = "SName";
+            this.SName.ReadOnly = true;
+            this.SName.Width = 150;
+            // 
+            // SDob
+            // 
+            this.SDob.DataPropertyName = "SDob";
+            this.SDob.HeaderText = "Date of Birth";
+            this.SDob.MinimumWidth = 8;
+            this.SDob.Name = "SDob";
+            this.SDob.ReadOnly = true;
+            this.SDob.Width = 120;
+            // 
+            // SEmail
+            // 
+            this.SEmail.DataPropertyName = "SEmail";
+            this.SEmail.HeaderText = "Email";
+            this.SEmail.MinimumWidth = 8;
+            this.SEmail.Name = "SEmail";
+            this.SEmail.ReadOnly = true;
+            this.SEmail.Width = 150;
+            // 
+            // SYear
+            // 
+            this.SYear.DataPropertyName = "SYear";
+            this.SYear.HeaderText = "Year";
+            this.SYear.MinimumWidth = 8;
+            this.SYear.Name = "SYear";
+            this.SYear.ReadOnly = true;
+            this.SYear.Width = 40;
+            // 
+            // SSection
+            // 
+            this.SSection.DataPropertyName = "SSection";
+            this.SSection.HeaderText = "Section";
+            this.SSection.MinimumWidth = 8;
+            this.SSection.Name = "SSection";
+            this.SSection.ReadOnly = true;
+            this.SSection.Width = 150;
             // 
             // sButtonText
             // 
@@ -279,6 +335,7 @@ namespace BD_Ecole_JS
             this.tbSurname.Name = "tbSurname";
             this.tbSurname.Size = new System.Drawing.Size(264, 26);
             this.tbSurname.TabIndex = 37;
+            this.tbSurname.TextChanged += new System.EventHandler(this.tbSurname_TextChanged);
             // 
             // label2
             // 
@@ -334,61 +391,6 @@ namespace BD_Ecole_JS
             this.bConf.Text = "Confirm";
             this.bConf.UseVisualStyleBackColor = true;
             this.bConf.Click += new System.EventHandler(this.bConf_Click);
-            // 
-            // SId
-            // 
-            this.SId.DataPropertyName = "SId";
-            this.SId.HeaderText = "StudentID";
-            this.SId.MinimumWidth = 8;
-            this.SId.Name = "SId";
-            this.SId.ReadOnly = true;
-            this.SId.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.SId.Visible = false;
-            this.SId.Width = 119;
-            // 
-            // SName
-            // 
-            this.SName.DataPropertyName = "SName";
-            this.SName.HeaderText = "Student Name ";
-            this.SName.MinimumWidth = 8;
-            this.SName.Name = "SName";
-            this.SName.ReadOnly = true;
-            this.SName.Width = 150;
-            // 
-            // SDob
-            // 
-            this.SDob.DataPropertyName = "SDob";
-            this.SDob.HeaderText = "Date of Birth";
-            this.SDob.MinimumWidth = 8;
-            this.SDob.Name = "SDob";
-            this.SDob.ReadOnly = true;
-            this.SDob.Width = 120;
-            // 
-            // SEmail
-            // 
-            this.SEmail.DataPropertyName = "SEmail";
-            this.SEmail.HeaderText = "Email";
-            this.SEmail.MinimumWidth = 8;
-            this.SEmail.Name = "SEmail";
-            this.SEmail.ReadOnly = true;
-            this.SEmail.Width = 150;
-            // 
-            // SYear
-            // 
-            this.SYear.DataPropertyName = "SYear";
-            this.SYear.HeaderText = "Year";
-            this.SYear.MinimumWidth = 8;
-            this.SYear.Name = "SYear";
-            this.SYear.ReadOnly = true;
-            this.SYear.Width = 40;
-            // 
-            // SSection
-            // 
-            this.SSection.DataPropertyName = "SSection";
-            this.SSection.HeaderText = "Section";
-            this.SSection.MinimumWidth = 8;
-            this.SSection.Name = "SSection";
-            this.SSection.ReadOnly = true;
             // 
             // GestionStudent
             // 

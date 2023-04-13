@@ -120,7 +120,7 @@ namespace BD_Ecole_JS
                 if (tbId.Text == "")
                 //Ajout
                 {
-                    AddStudent(tbSurname.Text, tbName.Text, dtpDob.Value, tbEmail.Text, tbYear.Text, tbSection.Text);
+                    AddStudent(tbName.Text, tbSurname.Text, dtpDob.Value, tbEmail.Text, tbYear.Text, tbSection.Text);
                 }
                 else
                 //Modification
@@ -134,6 +134,9 @@ namespace BD_Ecole_JS
             }
         }
 
+        private void tbSurname_TextChanged(object sender, EventArgs e)
+        {
 
+        }
     }
 }

@@ -70,16 +70,43 @@ namespace BD_Ecole_JS
             dtSchedule.Columns.Add(new DataColumn("SchStartTime"));
             dtSchedule.Columns.Add(new DataColumn("ClassID"));
             dtSchedule.Columns.Add(new DataColumn("CourseID"));
+            dtSchedule.Columns.Add(new DataColumn("ClName"));
+            dtSchedule.Columns.Add(new DataColumn("CoName"));
 
             List<C_T_Schedule> lTmp = new G_T_Schedule(sConnection).Lire("N");
             foreach (var p in lTmp)
             {
-                string duration = $"{p.SchDuration.Hours}:{p.SchDuration.Minutes}";
-                dtSchedule.Rows.Add(p.ScheduleID, duration, p.SchDate.ToShortDateString(), p.SchStart_Time.ToShortTimeString(), p.ClassID, p.CourseID);
+                string coursename;
+                coursename = CourseNameIfNull(p);
+                string classname = new G_T_Class(sConnection).Lire_ID(p.ClassID).ClName;
+                string duration;
+                duration = TimeFormatting(p);
+
+                dtSchedule.Rows.Add(p.ScheduleID, duration, p.SchDate.ToShortDateString(), p.SchStart_Time.ToShortTimeString(), p.ClassID, p.CourseID, classname, coursename);
             }
             bsSchedule = new BindingSource();
             bsSchedule.DataSource = dtSchedule;
             dgvSchedule.DataSource = bsSchedule;
+        }
+
+        private string TimeFormatting(C_T_Schedule p)
+        {
+            string duration;
+            if (p.SchDuration.Minutes == 0)
+                duration = $"{p.SchDuration.Hours}:00";
+            else
+                duration = $"{p.SchDuration.Hours}:{p.SchDuration.Minutes}";
+            return duration;
+        }
+
+        string CourseNameIfNull(C_T_Schedule p)
+        {
+            string coursename;
+            if (!(p.CourseID is null))
+                coursename = new G_T_Course(sConnection).Lire_ID((int)p.CourseID).CoName;
+            else
+                coursename = "No course Id accociated";
+            return coursename;
         }
 
         void Activer(bool lPrincipal)
@@ -103,7 +130,7 @@ namespace BD_Ecole_JS
             tbId.Text = iID.ToString();
 
             int totalMinutes = Convert.ToInt32(duration.Minutes);
-            dtSchedule.Rows.Add(totalMinutes, date.ToShortDateString(), starttime.ToString(), ClassID, CourseID);
+            dtSchedule.Rows.Add(iID, totalMinutes, date.ToShortDateString(), starttime.ToString(), ClassID, CourseID);
         }
 
         private void bAdd_Click(object sender, EventArgs e)

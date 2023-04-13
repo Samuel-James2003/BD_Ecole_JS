@@ -1,7 +1,7 @@
 ﻿
 namespace BD_Ecole_JS
 {
-    partial class GestionCourse
+    partial class GestionAssociation
     {
         /// <summary>
         /// Required designer variable.
@@ -30,29 +30,30 @@ namespace BD_Ecole_JS
         private void InitializeComponent()
         {
             this.scScreen = new System.Windows.Forms.SplitContainer();
-            this.dgvCourse = new System.Windows.Forms.DataGridView();
+            this.dgvAssociation = new System.Windows.Forms.DataGridView();
             this.sButtonText = new System.Windows.Forms.SplitContainer();
             this.bDel = new System.Windows.Forms.Button();
             this.bModi = new System.Windows.Forms.Button();
             this.bAdd = new System.Windows.Forms.Button();
             this.scTextExits = new System.Windows.Forms.SplitContainer();
+            this.cbStId = new System.Windows.Forms.ComboBox();
             this.cbTId = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.tbName = new System.Windows.Forms.TextBox();
             this.tbId = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.bCan = new System.Windows.Forms.Button();
             this.bConf = new System.Windows.Forms.Button();
+            this.AId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CoId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CoName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.scScreen)).BeginInit();
             this.scScreen.Panel1.SuspendLayout();
             this.scScreen.Panel2.SuspendLayout();
             this.scScreen.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCourse)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAssociation)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sButtonText)).BeginInit();
             this.sButtonText.Panel1.SuspendLayout();
             this.sButtonText.Panel2.SuspendLayout();
@@ -72,36 +73,37 @@ namespace BD_Ecole_JS
             // 
             // scScreen.Panel1
             // 
-            this.scScreen.Panel1.Controls.Add(this.dgvCourse);
+            this.scScreen.Panel1.Controls.Add(this.dgvAssociation);
             // 
             // scScreen.Panel2
             // 
             this.scScreen.Panel2.Controls.Add(this.sButtonText);
-            this.scScreen.Size = new System.Drawing.Size(1008, 818);
-            this.scScreen.SplitterDistance = 331;
-            this.scScreen.TabIndex = 2;
+            this.scScreen.Size = new System.Drawing.Size(1003, 731);
+            this.scScreen.SplitterDistance = 295;
+            this.scScreen.TabIndex = 3;
             // 
-            // dgvCourse
+            // dgvAssociation
             // 
-            this.dgvCourse.AllowUserToAddRows = false;
-            this.dgvCourse.AllowUserToDeleteRows = false;
-            this.dgvCourse.ColumnHeadersHeight = 34;
-            this.dgvCourse.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvAssociation.AllowUserToAddRows = false;
+            this.dgvAssociation.AllowUserToDeleteRows = false;
+            this.dgvAssociation.ColumnHeadersHeight = 34;
+            this.dgvAssociation.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.AId,
             this.CoId,
+            this.StId,
             this.CoName,
-            this.TId,
-            this.TName});
-            this.dgvCourse.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvCourse.Location = new System.Drawing.Point(0, 0);
-            this.dgvCourse.MultiSelect = false;
-            this.dgvCourse.Name = "dgvCourse";
-            this.dgvCourse.ReadOnly = true;
-            this.dgvCourse.RowHeadersVisible = false;
-            this.dgvCourse.RowHeadersWidth = 62;
-            this.dgvCourse.RowTemplate.Height = 28;
-            this.dgvCourse.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCourse.Size = new System.Drawing.Size(1008, 331);
-            this.dgvCourse.TabIndex = 0;
+            this.StName});
+            this.dgvAssociation.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvAssociation.Location = new System.Drawing.Point(0, 0);
+            this.dgvAssociation.MultiSelect = false;
+            this.dgvAssociation.Name = "dgvAssociation";
+            this.dgvAssociation.ReadOnly = true;
+            this.dgvAssociation.RowHeadersVisible = false;
+            this.dgvAssociation.RowHeadersWidth = 62;
+            this.dgvAssociation.RowTemplate.Height = 28;
+            this.dgvAssociation.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvAssociation.Size = new System.Drawing.Size(1003, 295);
+            this.dgvAssociation.TabIndex = 0;
             // 
             // sButtonText
             // 
@@ -119,8 +121,8 @@ namespace BD_Ecole_JS
             // sButtonText.Panel2
             // 
             this.sButtonText.Panel2.Controls.Add(this.scTextExits);
-            this.sButtonText.Size = new System.Drawing.Size(1008, 483);
-            this.sButtonText.SplitterDistance = 85;
+            this.sButtonText.Size = new System.Drawing.Size(1003, 432);
+            this.sButtonText.SplitterDistance = 76;
             this.sButtonText.TabIndex = 19;
             // 
             // bDel
@@ -128,7 +130,7 @@ namespace BD_Ecole_JS
             this.bDel.Dock = System.Windows.Forms.DockStyle.Left;
             this.bDel.Location = new System.Drawing.Point(670, 0);
             this.bDel.Name = "bDel";
-            this.bDel.Size = new System.Drawing.Size(335, 85);
+            this.bDel.Size = new System.Drawing.Size(335, 76);
             this.bDel.TabIndex = 4;
             this.bDel.Text = "Delete";
             this.bDel.UseVisualStyleBackColor = true;
@@ -139,7 +141,7 @@ namespace BD_Ecole_JS
             this.bModi.Dock = System.Windows.Forms.DockStyle.Left;
             this.bModi.Location = new System.Drawing.Point(335, 0);
             this.bModi.Name = "bModi";
-            this.bModi.Size = new System.Drawing.Size(335, 85);
+            this.bModi.Size = new System.Drawing.Size(335, 76);
             this.bModi.TabIndex = 3;
             this.bModi.Text = "Modify";
             this.bModi.UseVisualStyleBackColor = true;
@@ -150,7 +152,7 @@ namespace BD_Ecole_JS
             this.bAdd.Dock = System.Windows.Forms.DockStyle.Left;
             this.bAdd.Location = new System.Drawing.Point(0, 0);
             this.bAdd.Name = "bAdd";
-            this.bAdd.Size = new System.Drawing.Size(335, 85);
+            this.bAdd.Size = new System.Drawing.Size(335, 76);
             this.bAdd.TabIndex = 2;
             this.bAdd.Text = "Add";
             this.bAdd.UseVisualStyleBackColor = true;
@@ -165,10 +167,10 @@ namespace BD_Ecole_JS
             // 
             // scTextExits.Panel1
             // 
+            this.scTextExits.Panel1.Controls.Add(this.cbStId);
             this.scTextExits.Panel1.Controls.Add(this.cbTId);
             this.scTextExits.Panel1.Controls.Add(this.label3);
             this.scTextExits.Panel1.Controls.Add(this.label2);
-            this.scTextExits.Panel1.Controls.Add(this.tbName);
             this.scTextExits.Panel1.Controls.Add(this.tbId);
             this.scTextExits.Panel1.Controls.Add(this.label1);
             // 
@@ -176,16 +178,26 @@ namespace BD_Ecole_JS
             // 
             this.scTextExits.Panel2.Controls.Add(this.bCan);
             this.scTextExits.Panel2.Controls.Add(this.bConf);
-            this.scTextExits.Size = new System.Drawing.Size(1008, 394);
-            this.scTextExits.SplitterDistance = 312;
+            this.scTextExits.Size = new System.Drawing.Size(1003, 352);
+            this.scTextExits.SplitterDistance = 278;
             this.scTextExits.TabIndex = 37;
+            // 
+            // cbStId
+            // 
+            this.cbStId.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbStId.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbStId.FormattingEnabled = true;
+            this.cbStId.Location = new System.Drawing.Point(374, 137);
+            this.cbStId.Name = "cbStId";
+            this.cbStId.Size = new System.Drawing.Size(257, 28);
+            this.cbStId.TabIndex = 43;
             // 
             // cbTId
             // 
             this.cbTId.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbTId.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbTId.FormattingEnabled = true;
-            this.cbTId.Location = new System.Drawing.Point(364, 137);
+            this.cbTId.Location = new System.Drawing.Point(86, 137);
             this.cbTId.Name = "cbTId";
             this.cbTId.Size = new System.Drawing.Size(257, 28);
             this.cbTId.TabIndex = 42;
@@ -193,27 +205,20 @@ namespace BD_Ecole_JS
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(370, 114);
+            this.label3.Location = new System.Drawing.Point(370, 104);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(165, 20);
+            this.label3.Size = new System.Drawing.Size(164, 20);
             this.label3.TabIndex = 41;
-            this.label3.Text = "Teacher ID and Name";
+            this.label3.Text = "Student ID and Name";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(82, 104);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 20);
+            this.label2.Size = new System.Drawing.Size(158, 20);
             this.label2.TabIndex = 40;
-            this.label2.Text = "Name";
-            // 
-            // tbName
-            // 
-            this.tbName.Location = new System.Drawing.Point(86, 137);
-            this.tbName.Name = "tbName";
-            this.tbName.Size = new System.Drawing.Size(257, 26);
-            this.tbName.TabIndex = 35;
+            this.label2.Text = "Course ID and Name";
             // 
             // tbId
             // 
@@ -235,9 +240,9 @@ namespace BD_Ecole_JS
             // bCan
             // 
             this.bCan.Dock = System.Windows.Forms.DockStyle.Right;
-            this.bCan.Location = new System.Drawing.Point(6, 0);
+            this.bCan.Location = new System.Drawing.Point(1, 0);
             this.bCan.Name = "bCan";
-            this.bCan.Size = new System.Drawing.Size(501, 78);
+            this.bCan.Size = new System.Drawing.Size(501, 70);
             this.bCan.TabIndex = 35;
             this.bCan.Text = "Cancel";
             this.bCan.UseVisualStyleBackColor = true;
@@ -246,66 +251,75 @@ namespace BD_Ecole_JS
             // bConf
             // 
             this.bConf.Dock = System.Windows.Forms.DockStyle.Right;
-            this.bConf.Location = new System.Drawing.Point(507, 0);
+            this.bConf.Location = new System.Drawing.Point(502, 0);
             this.bConf.Name = "bConf";
-            this.bConf.Size = new System.Drawing.Size(501, 78);
+            this.bConf.Size = new System.Drawing.Size(501, 70);
             this.bConf.TabIndex = 36;
             this.bConf.Text = "Confirm";
             this.bConf.UseVisualStyleBackColor = true;
             this.bConf.Click += new System.EventHandler(this.bConf_Click);
             // 
+            // AId
+            // 
+            this.AId.DataPropertyName = "AId";
+            this.AId.HeaderText = "AssociationID";
+            this.AId.MinimumWidth = 8;
+            this.AId.Name = "AId";
+            this.AId.ReadOnly = true;
+            this.AId.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.AId.Visible = false;
+            this.AId.Width = 120;
+            // 
             // CoId
             // 
             this.CoId.DataPropertyName = "CoId";
-            this.CoId.HeaderText = "CourseID";
+            this.CoId.HeaderText = "Course ID";
             this.CoId.MinimumWidth = 8;
             this.CoId.Name = "CoId";
             this.CoId.ReadOnly = true;
-            this.CoId.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.CoId.Visible = false;
-            this.CoId.Width = 120;
+            this.CoId.Width = 153;
+            // 
+            // StId
+            // 
+            this.StId.DataPropertyName = "StId";
+            this.StId.HeaderText = "Student ID";
+            this.StId.MinimumWidth = 8;
+            this.StId.Name = "StId";
+            this.StId.ReadOnly = true;
+            this.StId.Width = 84;
             // 
             // CoName
             // 
             this.CoName.DataPropertyName = "CoName";
-            this.CoName.HeaderText = "Course Name ";
+            this.CoName.HeaderText = "Course Name";
             this.CoName.MinimumWidth = 8;
             this.CoName.Name = "CoName";
             this.CoName.ReadOnly = true;
-            this.CoName.Width = 153;
+            this.CoName.Width = 150;
             // 
-            // TId
+            // StName
             // 
-            this.TId.DataPropertyName = "TId";
-            this.TId.HeaderText = "Teacher ID";
-            this.TId.MinimumWidth = 8;
-            this.TId.Name = "TId";
-            this.TId.ReadOnly = true;
-            this.TId.Width = 84;
+            this.StName.DataPropertyName = "StName";
+            this.StName.HeaderText = "Student Name";
+            this.StName.MinimumWidth = 8;
+            this.StName.Name = "StName";
+            this.StName.ReadOnly = true;
+            this.StName.Width = 150;
             // 
-            // TName
-            // 
-            this.TName.DataPropertyName = "TName";
-            this.TName.HeaderText = "Teacher Name";
-            this.TName.MinimumWidth = 8;
-            this.TName.Name = "TName";
-            this.TName.ReadOnly = true;
-            this.TName.Width = 150;
-            // 
-            // GestionCourse
+            // GestionAssociation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1008, 818);
+            this.ClientSize = new System.Drawing.Size(1003, 731);
             this.Controls.Add(this.scScreen);
-            this.Name = "GestionCourse";
-            this.Text = "GestionCourse";
-            this.Load += new System.EventHandler(this.GestionCourse_Load);
+            this.Name = "GestionAssociation";
+            this.Text = "GestionAssociation";
+            this.Load += new System.EventHandler(this.GestionAssociation_Load);
             this.scScreen.Panel1.ResumeLayout(false);
             this.scScreen.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.scScreen)).EndInit();
             this.scScreen.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCourse)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAssociation)).EndInit();
             this.sButtonText.Panel1.ResumeLayout(false);
             this.sButtonText.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.sButtonText)).EndInit();
@@ -322,23 +336,24 @@ namespace BD_Ecole_JS
         #endregion
 
         private System.Windows.Forms.SplitContainer scScreen;
-        private System.Windows.Forms.DataGridView dgvCourse;
+        private System.Windows.Forms.DataGridView dgvAssociation;
         private System.Windows.Forms.SplitContainer sButtonText;
         private System.Windows.Forms.Button bDel;
         private System.Windows.Forms.Button bModi;
         private System.Windows.Forms.Button bAdd;
         private System.Windows.Forms.SplitContainer scTextExits;
+        private System.Windows.Forms.ComboBox cbTId;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox tbName;
         private System.Windows.Forms.TextBox tbId;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button bCan;
         private System.Windows.Forms.Button bConf;
-        private System.Windows.Forms.ComboBox cbTId;
+        private System.Windows.Forms.ComboBox cbStId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AId;
         private System.Windows.Forms.DataGridViewTextBoxColumn CoId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StId;
         private System.Windows.Forms.DataGridViewTextBoxColumn CoName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StName;
     }
 }
