@@ -31,12 +31,6 @@ namespace BD_Ecole_JS
         {
             this.scScreen = new System.Windows.Forms.SplitContainer();
             this.dgvSchedule = new System.Windows.Forms.DataGridView();
-            this.SchId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SchDuration = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SchDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SchStart_Time = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ClassID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CourseID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sButtonText = new System.Windows.Forms.SplitContainer();
             this.bDel = new System.Windows.Forms.Button();
             this.bModi = new System.Windows.Forms.Button();
@@ -56,6 +50,12 @@ namespace BD_Ecole_JS
             this.label1 = new System.Windows.Forms.Label();
             this.bCan = new System.Windows.Forms.Button();
             this.bConf = new System.Windows.Forms.Button();
+            this.ScheduleID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SchDuration = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SchDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SchStart_Time = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClassID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CourseID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.scScreen)).BeginInit();
             this.scScreen.Panel1.SuspendLayout();
             this.scScreen.Panel2.SuspendLayout();
@@ -85,7 +85,7 @@ namespace BD_Ecole_JS
             // scScreen.Panel2
             // 
             this.scScreen.Panel2.Controls.Add(this.sButtonText);
-            this.scScreen.Size = new System.Drawing.Size(1007, 846);
+            this.scScreen.Size = new System.Drawing.Size(1005, 846);
             this.scScreen.SplitterDistance = 342;
             this.scScreen.TabIndex = 2;
             // 
@@ -95,7 +95,7 @@ namespace BD_Ecole_JS
             this.dgvSchedule.AllowUserToDeleteRows = false;
             this.dgvSchedule.ColumnHeadersHeight = 34;
             this.dgvSchedule.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.SchId,
+            this.ScheduleID,
             this.SchDuration,
             this.SchDate,
             this.SchStart_Time,
@@ -110,64 +110,8 @@ namespace BD_Ecole_JS
             this.dgvSchedule.RowHeadersWidth = 62;
             this.dgvSchedule.RowTemplate.Height = 28;
             this.dgvSchedule.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSchedule.Size = new System.Drawing.Size(1007, 342);
+            this.dgvSchedule.Size = new System.Drawing.Size(1005, 342);
             this.dgvSchedule.TabIndex = 0;
-            // 
-            // SchId
-            // 
-            this.SchId.DataPropertyName = "SchId";
-            this.SchId.HeaderText = "ScheduleID";
-            this.SchId.MinimumWidth = 8;
-            this.SchId.Name = "SchId";
-            this.SchId.ReadOnly = true;
-            this.SchId.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.SchId.Visible = false;
-            this.SchId.Width = 120;
-            // 
-            // SchDuration
-            // 
-            this.SchDuration.DataPropertyName = "SchDuration";
-            this.SchDuration.HeaderText = "Duration";
-            this.SchDuration.MinimumWidth = 8;
-            this.SchDuration.Name = "SchDuration";
-            this.SchDuration.ReadOnly = true;
-            this.SchDuration.Width = 153;
-            // 
-            // SchDate
-            // 
-            this.SchDate.DataPropertyName = "SchDate";
-            this.SchDate.HeaderText = "Date";
-            this.SchDate.MinimumWidth = 8;
-            this.SchDate.Name = "SchDate";
-            this.SchDate.ReadOnly = true;
-            this.SchDate.Width = 84;
-            // 
-            // SchStart_Time
-            // 
-            this.SchStart_Time.DataPropertyName = "SchStartTime";
-            this.SchStart_Time.HeaderText = "Start Time";
-            this.SchStart_Time.MinimumWidth = 8;
-            this.SchStart_Time.Name = "SchStart_Time";
-            this.SchStart_Time.ReadOnly = true;
-            this.SchStart_Time.Width = 150;
-            // 
-            // ClassID
-            // 
-            this.ClassID.DataPropertyName = "ClassID";
-            this.ClassID.HeaderText = "ClassID";
-            this.ClassID.MinimumWidth = 8;
-            this.ClassID.Name = "ClassID";
-            this.ClassID.ReadOnly = true;
-            this.ClassID.Width = 150;
-            // 
-            // CourseID
-            // 
-            this.CourseID.DataPropertyName = "CourseID";
-            this.CourseID.HeaderText = "CourseID";
-            this.CourseID.MinimumWidth = 8;
-            this.CourseID.Name = "CourseID";
-            this.CourseID.ReadOnly = true;
-            this.CourseID.Width = 150;
             // 
             // sButtonText
             // 
@@ -185,7 +129,7 @@ namespace BD_Ecole_JS
             // sButtonText.Panel2
             // 
             this.sButtonText.Panel2.Controls.Add(this.scTextExits);
-            this.sButtonText.Size = new System.Drawing.Size(1007, 500);
+            this.sButtonText.Size = new System.Drawing.Size(1005, 500);
             this.sButtonText.SplitterDistance = 89;
             this.sButtonText.TabIndex = 19;
             // 
@@ -248,7 +192,7 @@ namespace BD_Ecole_JS
             // 
             this.scTextExits.Panel2.Controls.Add(this.bCan);
             this.scTextExits.Panel2.Controls.Add(this.bConf);
-            this.scTextExits.Size = new System.Drawing.Size(1007, 407);
+            this.scTextExits.Size = new System.Drawing.Size(1005, 407);
             this.scTextExits.SplitterDistance = 322;
             this.scTextExits.TabIndex = 37;
             // 
@@ -298,15 +242,17 @@ namespace BD_Ecole_JS
             // 
             // dtpStartTime
             // 
+            this.dtpStartTime.CustomFormat = "HH:mm";
             this.dtpStartTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpStartTime.Location = new System.Drawing.Point(670, 68);
             this.dtpStartTime.Name = "dtpStartTime";
             this.dtpStartTime.Size = new System.Drawing.Size(117, 26);
             this.dtpStartTime.TabIndex = 45;
-            this.dtpStartTime.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
+            this.dtpStartTime.Value = new System.DateTime(2023, 4, 13, 0, 0, 0, 0);
             // 
             // dtpDuration
             // 
+            this.dtpDuration.CustomFormat = "HH:mm";
             this.dtpDuration.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpDuration.Location = new System.Drawing.Point(670, 139);
             this.dtpDuration.Name = "dtpDuration";
@@ -357,7 +303,7 @@ namespace BD_Ecole_JS
             // bCan
             // 
             this.bCan.Dock = System.Windows.Forms.DockStyle.Right;
-            this.bCan.Location = new System.Drawing.Point(5, 0);
+            this.bCan.Location = new System.Drawing.Point(3, 0);
             this.bCan.Name = "bCan";
             this.bCan.Size = new System.Drawing.Size(501, 81);
             this.bCan.TabIndex = 35;
@@ -368,7 +314,7 @@ namespace BD_Ecole_JS
             // bConf
             // 
             this.bConf.Dock = System.Windows.Forms.DockStyle.Right;
-            this.bConf.Location = new System.Drawing.Point(506, 0);
+            this.bConf.Location = new System.Drawing.Point(504, 0);
             this.bConf.Name = "bConf";
             this.bConf.Size = new System.Drawing.Size(501, 81);
             this.bConf.TabIndex = 36;
@@ -376,11 +322,65 @@ namespace BD_Ecole_JS
             this.bConf.UseVisualStyleBackColor = true;
             this.bConf.Click += new System.EventHandler(this.bConf_Click);
             // 
+            // ScheduleID
+            // 
+            this.ScheduleID.DataPropertyName = "ScheduleID";
+            this.ScheduleID.HeaderText = "ScheduleID";
+            this.ScheduleID.MinimumWidth = 8;
+            this.ScheduleID.Name = "ScheduleID";
+            this.ScheduleID.ReadOnly = true;
+            this.ScheduleID.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ScheduleID.Visible = false;
+            this.ScheduleID.Width = 120;
+            // 
+            // SchDuration
+            // 
+            this.SchDuration.DataPropertyName = "SchDuration";
+            this.SchDuration.HeaderText = "Duration";
+            this.SchDuration.MinimumWidth = 8;
+            this.SchDuration.Name = "SchDuration";
+            this.SchDuration.ReadOnly = true;
+            this.SchDuration.Width = 153;
+            // 
+            // SchDate
+            // 
+            this.SchDate.DataPropertyName = "SchDate";
+            this.SchDate.HeaderText = "Date";
+            this.SchDate.MinimumWidth = 8;
+            this.SchDate.Name = "SchDate";
+            this.SchDate.ReadOnly = true;
+            this.SchDate.Width = 84;
+            // 
+            // SchStart_Time
+            // 
+            this.SchStart_Time.DataPropertyName = "SchStartTime";
+            this.SchStart_Time.HeaderText = "Start Time";
+            this.SchStart_Time.MinimumWidth = 8;
+            this.SchStart_Time.Name = "SchStart_Time";
+            this.SchStart_Time.ReadOnly = true;
+            this.SchStart_Time.Width = 150;
+            // 
+            // ClassID
+            // 
+            this.ClassID.DataPropertyName = "ClassID";
+            this.ClassID.HeaderText = "ClassID";
+            this.ClassID.MinimumWidth = 8;
+            this.ClassID.Name = "ClassID";
+            this.ClassID.ReadOnly = true;
+            // 
+            // CourseID
+            // 
+            this.CourseID.DataPropertyName = "CourseID";
+            this.CourseID.HeaderText = "CourseID";
+            this.CourseID.MinimumWidth = 8;
+            this.CourseID.Name = "CourseID";
+            this.CourseID.ReadOnly = true;
+            // 
             // GestionSchedule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1007, 846);
+            this.ClientSize = new System.Drawing.Size(1005, 846);
             this.Controls.Add(this.scScreen);
             this.Name = "GestionSchedule";
             this.Text = "GestionSchedule";
@@ -426,7 +426,7 @@ namespace BD_Ecole_JS
         private System.Windows.Forms.DateTimePicker dtpDuration;
         private System.Windows.Forms.DateTimePicker dtpDate;
         private System.Windows.Forms.ComboBox cbCoId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SchId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ScheduleID;
         private System.Windows.Forms.DataGridViewTextBoxColumn SchDuration;
         private System.Windows.Forms.DataGridViewTextBoxColumn SchDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn SchStart_Time;

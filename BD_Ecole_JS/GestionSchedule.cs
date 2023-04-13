@@ -25,8 +25,8 @@ namespace BD_Ecole_JS
             else
                 Activer(false);
 
-            dtpStartTime.CustomFormat = "hh:mm";
-            dtpDuration.CustomFormat = "hh:mm";
+
+
         }
 
         private void Gestion_Schedule_Load(object sender, EventArgs e)
@@ -55,8 +55,6 @@ namespace BD_Ecole_JS
             }
         }
 
-
-
         int Convert_CB_to_Int(string WorkingString)
         {
             var Res = WorkingString.Split('-');
@@ -76,8 +74,8 @@ namespace BD_Ecole_JS
             List<C_T_Schedule> lTmp = new G_T_Schedule(sConnection).Lire("N");
             foreach (var p in lTmp)
             {
-
-                dtSchedule.Rows.Add(p.ScheduleID, p.SchDuration, p.SchDate.ToShortDateString(), p.SchStart_Time.ToShortTimeString(), p.ClassID, p.CourseID);
+                string duration = $"{p.SchDuration.Hours}:{p.SchDuration.Minutes}";
+                dtSchedule.Rows.Add(p.ScheduleID, duration, p.SchDate.ToShortDateString(), p.SchStart_Time.ToShortTimeString(), p.ClassID, p.CourseID);
             }
             bsSchedule = new BindingSource();
             bsSchedule.DataSource = dtSchedule;
@@ -101,7 +99,6 @@ namespace BD_Ecole_JS
 
         void AddSchedule(TimeSpan duration, DateTime date, DateTime starttime, int ClassID, int CourseID)
         {
-            //startyime is going to behave weirdly
             int iID = new G_T_Schedule(sConnection).Ajouter(duration, date, starttime, ClassID, CourseID);
             tbId.Text = iID.ToString();
 
@@ -149,17 +146,19 @@ namespace BD_Ecole_JS
                 MessageBox.Show("Please put a ClassID");
             else
             {
+                DateTime dt = dtpDuration.Value;
+                TimeSpan DurationAsSpan = new TimeSpan(dt.Hour, dt.Minute, 0);
                 if (tbId.Text == "")
                 //Ajout
                 {
 
-                    AddSchedule(dtpDuration.Value.TimeOfDay, dtpDate.Value, dtpStartTime.Value,
+                    AddSchedule(DurationAsSpan, dtpDate.Value, dtpStartTime.Value,
                         Convert_CB_to_Int(cbClId.SelectedItem.ToString()), Convert_CB_to_Int(cbCoId.SelectedItem.ToString()));
                 }
                 else
                 //Modification
                 {
-                    new G_T_Schedule(sConnection).Modifier(int.Parse(tbId.Text), dtpDuration.Value.TimeOfDay, dtpDate.Value, dtpStartTime.Value,
+                    new G_T_Schedule(sConnection).Modifier(int.Parse(tbId.Text), DurationAsSpan, dtpDate.Value, dtpStartTime.Value,
                         Convert_CB_to_Int(cbClId.Text.ToString()), Convert_CB_to_Int(cbCoId.Text.ToString()));
 
                     bsSchedule.EndEdit();
