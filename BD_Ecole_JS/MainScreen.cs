@@ -51,5 +51,10 @@ namespace BD_Ecole_JS
         {
             OpenForm(new GestionAssociation());
         }
+
+        private void bConsultSchedule_Click(object sender, EventArgs e)
+        {
+            OpenForm(new ConsultSchedule());
+        }
     }
 }

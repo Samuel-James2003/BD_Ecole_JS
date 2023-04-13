@@ -30,13 +30,14 @@ namespace BD_Ecole_JS
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.bGAssocitation = new System.Windows.Forms.Button();
             this.bGCourse = new System.Windows.Forms.Button();
             this.bGGrade = new System.Windows.Forms.Button();
             this.bGDSChedule = new System.Windows.Forms.Button();
             this.bGClass = new System.Windows.Forms.Button();
             this.bGStudent = new System.Windows.Forms.Button();
             this.bGTeacher = new System.Windows.Forms.Button();
-            this.bGAssocitation = new System.Windows.Forms.Button();
+            this.bConsultSchedule = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -61,6 +62,17 @@ namespace BD_Ecole_JS
             this.splitContainer1.Size = new System.Drawing.Size(1616, 712);
             this.splitContainer1.SplitterDistance = 495;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // bGAssocitation
+            // 
+            this.bGAssocitation.Dock = System.Windows.Forms.DockStyle.Left;
+            this.bGAssocitation.Location = new System.Drawing.Point(1383, 0);
+            this.bGAssocitation.Name = "bGAssocitation";
+            this.bGAssocitation.Size = new System.Drawing.Size(230, 213);
+            this.bGAssocitation.TabIndex = 12;
+            this.bGAssocitation.Text = "Gestion Association";
+            this.bGAssocitation.UseVisualStyleBackColor = true;
+            this.bGAssocitation.Click += new System.EventHandler(this.bGAssocitation_Click);
             // 
             // bGCourse
             // 
@@ -128,22 +140,22 @@ namespace BD_Ecole_JS
             this.bGTeacher.UseVisualStyleBackColor = true;
             this.bGTeacher.Click += new System.EventHandler(this.bGTeacher_Click);
             // 
-            // bGAssocitation
+            // bConsultSchedule
             // 
-            this.bGAssocitation.Dock = System.Windows.Forms.DockStyle.Left;
-            this.bGAssocitation.Location = new System.Drawing.Point(1383, 0);
-            this.bGAssocitation.Name = "bGAssocitation";
-            this.bGAssocitation.Size = new System.Drawing.Size(230, 213);
-            this.bGAssocitation.TabIndex = 12;
-            this.bGAssocitation.Text = "Gestion Association";
-            this.bGAssocitation.UseVisualStyleBackColor = true;
-            this.bGAssocitation.Click += new System.EventHandler(this.bGAssocitation_Click);
+            this.bConsultSchedule.Location = new System.Drawing.Point(0, 0);
+            this.bConsultSchedule.Name = "bConsultSchedule";
+            this.bConsultSchedule.Size = new System.Drawing.Size(109, 492);
+            this.bConsultSchedule.TabIndex = 1;
+            this.bConsultSchedule.Text = "Consult Schedule";
+            this.bConsultSchedule.UseVisualStyleBackColor = true;
+            this.bConsultSchedule.Click += new System.EventHandler(this.bConsultSchedule_Click);
             // 
             // MainScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1616, 712);
+            this.Controls.Add(this.bConsultSchedule);
             this.Controls.Add(this.splitContainer1);
             this.Name = "MainScreen";
             this.Text = "Main Screen Page";
@@ -164,6 +176,7 @@ namespace BD_Ecole_JS
         private System.Windows.Forms.Button bGStudent;
         private System.Windows.Forms.Button bGTeacher;
         private System.Windows.Forms.Button bGAssocitation;
+        private System.Windows.Forms.Button bConsultSchedule;
     }
 }
 
