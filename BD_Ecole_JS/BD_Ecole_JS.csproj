@@ -55,6 +55,12 @@
     <Compile Include="A_T_Schedule.cs" />
     <Compile Include="A_T_Student.cs" />
     <Compile Include="A_T_Teacher.cs" />
+    <Compile Include="ConsultGrade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultGrade.Designer.cs">
+      <DependentUpon>ConsultGrade.cs</DependentUpon>
+    </Compile>
     <Compile Include="ConsultSchedule.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +132,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ConsultGrade.resx">
+      <DependentUpon>ConsultGrade.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ConsultSchedule.resx">
       <DependentUpon>ConsultSchedule.cs</DependentUpon>
     </EmbeddedResource>

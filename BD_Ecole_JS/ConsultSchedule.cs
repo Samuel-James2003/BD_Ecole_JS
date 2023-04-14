@@ -38,7 +38,9 @@ namespace BD_Ecole_JS
             dtSchedule.Columns.Add(new DataColumn("CourseID"));
             dtSchedule.Columns.Add(new DataColumn("ClName"));
             dtSchedule.Columns.Add(new DataColumn("CoName"));
-            
+            bsSchedule = new BindingSource();
+            bsSchedule.DataSource = dtSchedule;
+            dgvSchedule.DataSource = bsSchedule;
         }
 
         string TimeFormatting(C_T_Schedule p)
@@ -62,7 +64,7 @@ namespace BD_Ecole_JS
         }
 
         void FillDGV(C_T_Schedule p)
-        {            
+        {
             string coursename;
             coursename = CourseNameIfNull(p);
             string classname = new G_T_Class(sConnection).Lire_ID(p.ClassID).ClName;
@@ -70,7 +72,7 @@ namespace BD_Ecole_JS
             duration = TimeFormatting(p);
 
             dtSchedule.Rows.Add(p.ScheduleID, duration, p.SchDate.ToShortDateString(), p.SchStart_Time.ToShortTimeString(), p.ClassID, p.CourseID, classname, coursename);
-            
+
             bsSchedule = new BindingSource();
             bsSchedule.DataSource = dtSchedule;
             dgvSchedule.DataSource = bsSchedule;
@@ -100,7 +102,7 @@ namespace BD_Ecole_JS
             }
 
             cbTId.Text = "";
-            gbTeacher.Enabled = bGoT.Enabled  = bTeacher.Enabled = false;
+            gbTeacher.Enabled = bGoT.Enabled = bTeacher.Enabled = false;
         }
 
         int Convert_CB_to_Int(string WorkingString)
@@ -184,15 +186,14 @@ namespace BD_Ecole_JS
                     }
                 }
             }
-            
+
             cbStId.Text = "";
             gbStudent.Enabled = bGoS.Enabled = bStudent.Enabled = false;
         }
 
         private void bClear_Click(object sender, EventArgs e)
         {
-            dgvSchedule.DataSource = null;
-            dgvSchedule.Refresh();
+
             SetDGV();
             bTeacher.Enabled = bStudent.Enabled = true;
             bStudent.Enabled = bTeacher.Enabled = true;

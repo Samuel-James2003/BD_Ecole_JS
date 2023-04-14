@@ -40,6 +40,7 @@ namespace BD_Ecole_JS
             this.bStudent = new System.Windows.Forms.Button();
             this.bTeacher = new System.Windows.Forms.Button();
             this.dgvSchedule = new System.Windows.Forms.DataGridView();
+            this.bClear = new System.Windows.Forms.Button();
             this.ScheduleID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SchDuration = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SchDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,7 +49,6 @@ namespace BD_Ecole_JS
             this.CourseID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ClName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CoName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bClear = new System.Windows.Forms.Button();
             this.gbTeacher.SuspendLayout();
             this.gbStudent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSchedule)).BeginInit();
@@ -183,6 +183,16 @@ namespace BD_Ecole_JS
             this.dgvSchedule.Size = new System.Drawing.Size(1043, 332);
             this.dgvSchedule.TabIndex = 3;
             // 
+            // bClear
+            // 
+            this.bClear.Location = new System.Drawing.Point(12, 640);
+            this.bClear.Name = "bClear";
+            this.bClear.Size = new System.Drawing.Size(1043, 130);
+            this.bClear.TabIndex = 4;
+            this.bClear.Text = "Clear";
+            this.bClear.UseVisualStyleBackColor = true;
+            this.bClear.Click += new System.EventHandler(this.bClear_Click);
+            // 
             // ScheduleID
             // 
             this.ScheduleID.DataPropertyName = "ScheduleID";
@@ -237,7 +247,7 @@ namespace BD_Ecole_JS
             this.CourseID.MinimumWidth = 8;
             this.CourseID.Name = "CourseID";
             this.CourseID.ReadOnly = true;
-            this.CourseID.Width = 70;
+            this.CourseID.Width = 50;
             // 
             // ClName
             // 
@@ -256,16 +266,6 @@ namespace BD_Ecole_JS
             this.CoName.Name = "CoName";
             this.CoName.ReadOnly = true;
             this.CoName.Width = 130;
-            // 
-            // bClear
-            // 
-            this.bClear.Location = new System.Drawing.Point(12, 640);
-            this.bClear.Name = "bClear";
-            this.bClear.Size = new System.Drawing.Size(1043, 130);
-            this.bClear.TabIndex = 4;
-            this.bClear.Text = "Clear";
-            this.bClear.UseVisualStyleBackColor = true;
-            this.bClear.Click += new System.EventHandler(this.bClear_Click);
             // 
             // ConsultSchedule
             // 
@@ -303,6 +303,7 @@ namespace BD_Ecole_JS
         private System.Windows.Forms.Button bStudent;
         private System.Windows.Forms.Button bTeacher;
         private System.Windows.Forms.DataGridView dgvSchedule;
+        private System.Windows.Forms.Button bClear;
         private System.Windows.Forms.DataGridViewTextBoxColumn ScheduleID;
         private System.Windows.Forms.DataGridViewTextBoxColumn SchDuration;
         private System.Windows.Forms.DataGridViewTextBoxColumn SchDate;
@@ -311,6 +312,5 @@ namespace BD_Ecole_JS
         private System.Windows.Forms.DataGridViewTextBoxColumn CourseID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ClName;
         private System.Windows.Forms.DataGridViewTextBoxColumn CoName;
-        private System.Windows.Forms.Button bClear;
     }
 }

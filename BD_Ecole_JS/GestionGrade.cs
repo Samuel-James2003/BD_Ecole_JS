@@ -14,6 +14,7 @@ namespace BD_Ecole_JS
         BindingSource bsGrade;
         string sConnection;
 
+
         public GestionGrade()
         {
             InitializeComponent();

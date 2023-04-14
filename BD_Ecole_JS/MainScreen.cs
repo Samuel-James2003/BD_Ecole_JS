@@ -56,5 +56,10 @@ namespace BD_Ecole_JS
         {
             OpenForm(new ConsultSchedule());
         }
+
+        private void bConsultGrade_Click(object sender, EventArgs e)
+        {
+            OpenForm(new ConsultGrade());
+        }
     }
 }
