@@ -67,6 +67,12 @@
     <Compile Include="ConsultSchedule.Designer.cs">
       <DependentUpon>ConsultSchedule.cs</DependentUpon>
     </Compile>
+    <Compile Include="CreateSchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateSchedule.Designer.cs">
+      <DependentUpon>CreateSchedule.cs</DependentUpon>
+    </Compile>
     <Compile Include="C_T_Association.cs" />
     <Compile Include="C_T_Class.cs" />
     <Compile Include="C_T_Course.cs" />
@@ -137,6 +143,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ConsultSchedule.resx">
       <DependentUpon>ConsultSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateSchedule.resx">
+      <DependentUpon>CreateSchedule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GestionAssociation.resx">
       <DependentUpon>GestionAssociation.cs</DependentUpon>

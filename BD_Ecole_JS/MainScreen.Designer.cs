@@ -81,6 +81,7 @@ namespace BD_Ecole_JS
             this.bCreateSch.TabIndex = 4;
             this.bCreateSch.Text = "Create Schedule";
             this.bCreateSch.UseVisualStyleBackColor = true;
+            this.bCreateSch.Click += new System.EventHandler(this.bCreateSch_Click);
             // 
             // bConsultGrade
             // 
