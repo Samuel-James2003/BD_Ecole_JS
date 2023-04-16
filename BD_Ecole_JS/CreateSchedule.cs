@@ -57,7 +57,7 @@ namespace BD_Ecole_JS
             string coursename = CourseNameIfNull(Sched);
             string classname = new G_T_Class(sConnection).Lire_ID(Sched.ClassID).ClName;
             string duration = TimeFormatting(Sched.SchDuration);
-            
+
 
             string[] data = new string[]
             {
@@ -78,7 +78,7 @@ namespace BD_Ecole_JS
                 foreach (var line in data)
                     sw.WriteLine(line);
             }
-            
+
         }
 
         void SetFile(C_T_Student Student)
@@ -138,7 +138,7 @@ namespace BD_Ecole_JS
                         }
                         else if (Schedule.CourseID == Assoc.CourseID && Assoc.StudentID == student.StudentID && tmp != 0)
                         {
-                            HtmlAppend(Schedule,student);
+                            HtmlAppend(Schedule, student);
                         }
                     }
                 }
