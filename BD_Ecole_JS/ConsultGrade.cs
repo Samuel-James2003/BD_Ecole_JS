@@ -103,6 +103,7 @@ namespace BD_Ecole_JS
         private void bGoS_Click(object sender, EventArgs e)
         {
             Links.Clear();
+            SetDGV();
             foreach (var item in new G_T_Association(sConnection).Lire("N"))
                 if (item.StudentID == Convert_CB_to_Int(cbStId.Text))
                     Links.Add(item);

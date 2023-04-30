@@ -16,7 +16,6 @@ namespace BD_Ecole_JS
         string sConnection;
         public GestionSchedule()
         {
-
             InitializeComponent();
             sConnection = ConfigurationManager.ConnectionStrings["BD_Ecole_JS.Properties.Settings.ConnectionString_Couche"].ConnectionString;
             FillDGV();
@@ -24,9 +23,6 @@ namespace BD_Ecole_JS
                 Activer(true);
             else
                 Activer(false);
-
-
-
         }
 
         private void Gestion_Schedule_Load(object sender, EventArgs e)
@@ -51,7 +47,6 @@ namespace BD_Ecole_JS
                 {
                     Close();
                 }
-
             }
         }
 
@@ -150,9 +145,8 @@ namespace BD_Ecole_JS
                 Activer(false);
             }
             else
-            {
                 MessageBox.Show("Please select a row");
-            }
+            
         }
 
         private void bDel_Click(object sender, EventArgs e)
@@ -187,9 +181,7 @@ namespace BD_Ecole_JS
                 {
                     new G_T_Schedule(sConnection).Modifier(int.Parse(tbId.Text), DurationAsSpan, dtpDate.Value, dtpStartTime.Value,
                         Convert_CB_to_Int(cbClId.Text.ToString()), Convert_CB_to_Int(cbCoId.Text.ToString()));
-
                     bsSchedule.EndEdit();
-
                 }
                 Activer(true);
                 FillDGV();
