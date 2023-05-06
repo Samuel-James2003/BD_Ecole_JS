@@ -31,7 +31,7 @@ namespace BD_Ecole_JS
             var lTmp = new G_T_Association(sConnection).Lire("N");
             foreach (var p in lTmp)
             {
-                string tmp = (p.AssociationID + "- " + CourseName(p) + " - " + StudentName(p)).ToString();
+                string tmp = (p.AssociationID + "- " + CoName_TName(p)[0] + " - "+ CoName_TName(p)[1] + " - " + StudentName(p)).ToString();
                 cbAId.Items.Add(tmp);
             }
             if (cbAId.Items.Count == 0)
@@ -61,12 +61,13 @@ namespace BD_Ecole_JS
             dtGrade.Columns.Add(new DataColumn("AId"));
             dtGrade.Columns.Add(new DataColumn("StName"));
             dtGrade.Columns.Add(new DataColumn("CoName"));
+            dtGrade.Columns.Add(new DataColumn("TName"));
 
 
             List<C_T_Grade> lTmp = new G_T_Grade(sConnection).Lire("N");
             foreach (var p in lTmp)
             {
-                dtGrade.Rows.Add(p.GradeID, p.GName, p.Gscore, p.GDate, p.AssociationID, StudentName(p), CourseName(p));
+                dtGrade.Rows.Add(p.GradeID, p.GName, p.Gscore, p.GDate, p.AssociationID, StudentName(p), CourseNameAndTeacherName(p)[0], CourseNameAndTeacherName(p)[1]);
             }
             bsGrade = new BindingSource();
             bsGrade.DataSource = dtGrade;
@@ -75,18 +76,19 @@ namespace BD_Ecole_JS
 
         DateTime GDateIfNull(C_T_Grade p)
         {
-            DateTime date;
             if (!(p.GDate is null))
-                date = (DateTime)new G_T_Grade(sConnection).Lire_ID(p.GradeID).GDate;
+                return (DateTime)new G_T_Grade(sConnection).Lire_ID(p.GradeID).GDate;
             else
-                date = new DateTime(0, 0, 0);
-            return date;
+                return new DateTime(2000, 1, 1);
         }
 
-        string CourseName(C_T_Association p)
+        string[] CoName_TName(C_T_Association p)
         {
             var tmp = new G_T_Association(sConnection).Lire_ID(p.AssociationID).CourseID;
-            return new G_T_Course(sConnection).Lire_ID(tmp).CoName;
+            string[] res = new string[2];
+            res[0] = new G_T_Course(sConnection).Lire_ID(tmp).CoName;
+            res[1] = new G_T_Teacher(sConnection).Lire_ID(new G_T_Course(sConnection).Lire_ID(tmp).TeacherID).TName + " " + new G_T_Teacher(sConnection).Lire_ID(new G_T_Course(sConnection).Lire_ID(tmp).TeacherID).TSurname;
+            return res;
         }
 
         string StudentName(C_T_Association p)
@@ -95,10 +97,10 @@ namespace BD_Ecole_JS
             return new G_T_Student(sConnection).Lire_ID(tmp).SName + " " + new G_T_Student(sConnection).Lire_ID(tmp).SSurname;
         }
 
-        string CourseName(C_T_Grade p)
+        string[] CourseNameAndTeacherName(C_T_Grade p)
         {
-            var tmp = new G_T_Association(sConnection).Lire_ID(p.AssociationID).CourseID;
-            return new G_T_Course(sConnection).Lire_ID(tmp).CoName;
+            var tmp = new G_T_Association(sConnection).Lire_ID(p.AssociationID);
+            return CoName_TName(tmp);
         }
 
         string StudentName(C_T_Grade p)

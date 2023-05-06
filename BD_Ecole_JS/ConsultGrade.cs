@@ -58,20 +58,25 @@ namespace BD_Ecole_JS
             return Res.Last();
         }
 
-        DateTime GDateIfNull(C_T_Grade p)
-        {
-            DateTime date;
-            if (!(p.GDate is null))
-                date = (DateTime)new G_T_Grade(sConnection).Lire_ID(p.GradeID).GDate;
-            else
-                date = new DateTime(0, 0, 0);
-            return date;
-        }
-
-        string CourseName(C_T_Association p)
+        string[] CoName_TName(C_T_Association p)
         {
             var tmp = new G_T_Association(sConnection).Lire_ID(p.AssociationID).CourseID;
-            return new G_T_Course(sConnection).Lire_ID(tmp).CoName;
+            string[] res = new string[2];
+            res[0] = new G_T_Course(sConnection).Lire_ID(tmp).CoName;
+            res[1] = new G_T_Teacher(sConnection).Lire_ID(new G_T_Course(sConnection).Lire_ID(tmp).TeacherID).TName + " " + new G_T_Teacher(sConnection).Lire_ID(new G_T_Course(sConnection).Lire_ID(tmp).TeacherID).TSurname;
+            return res;
+        }
+
+        string IfNullDateString(C_T_Grade p)
+        {
+            if (!(p.GDate is null))
+            {
+                DateTime date = (DateTime)new G_T_Grade(sConnection).Lire_ID(p.GradeID).GDate;
+                return date.ToShortDateString();
+            }
+
+            else
+                return "";
         }
 
         private void SetDGV()
@@ -84,16 +89,17 @@ namespace BD_Ecole_JS
             dtGrade.Columns.Add(new DataColumn("AId"));
             dtGrade.Columns.Add(new DataColumn("StName"));
             dtGrade.Columns.Add(new DataColumn("CoName"));
+            dtGrade.Columns.Add(new DataColumn("TName"));
 
             bsGrade = new BindingSource();
             bsGrade.DataSource = dtGrade;
             dgvGrade.DataSource = bsGrade;
         }
 
-        void FillDGV(string coursename, C_T_Grade g)
+        void FillDGV(string[] CourseAndTeacher, C_T_Grade g)
         {
 
-            dtGrade.Rows.Add(g.GradeID, g.GName, g.Gscore, GDateIfNull(g).ToShortDateString(), g.AssociationID, Convert_CB_to_String(cbStId.Text), coursename);
+            dtGrade.Rows.Add(g.GradeID, g.GName, g.Gscore, IfNullDateString(g), g.AssociationID, Convert_CB_to_String(cbStId.Text), CourseAndTeacher[0], CourseAndTeacher[1]);
 
             bsGrade = new BindingSource();
             bsGrade.DataSource = dtGrade;
@@ -111,7 +117,7 @@ namespace BD_Ecole_JS
             foreach (var item in new G_T_Grade(sConnection).Lire("N"))
                 foreach (var Assoc in Links)
                     if (item.AssociationID == Assoc.AssociationID)
-                        FillDGV(CourseName(Assoc), item);
+                        FillDGV(CoName_TName(Assoc), item);
         }
 
         private void cbStId_TextChanged(object sender, EventArgs e)

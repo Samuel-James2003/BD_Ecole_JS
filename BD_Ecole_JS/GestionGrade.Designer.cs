@@ -30,12 +30,13 @@ namespace BD_Ecole_JS
         private void InitializeComponent()
         {
             this.scScreen = new System.Windows.Forms.SplitContainer();
-            this.dgvGrade = new System.Windows.Forms.DataGridView();
             this.sButtonText = new System.Windows.Forms.SplitContainer();
             this.bDel = new System.Windows.Forms.Button();
             this.bModi = new System.Windows.Forms.Button();
             this.bAdd = new System.Windows.Forms.Button();
             this.scTextExits = new System.Windows.Forms.SplitContainer();
+            this.tbName = new System.Windows.Forms.TextBox();
+            this.tbScore = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -46,20 +47,19 @@ namespace BD_Ecole_JS
             this.label1 = new System.Windows.Forms.Label();
             this.bCan = new System.Windows.Forms.Button();
             this.bConf = new System.Windows.Forms.Button();
-            this.tbScore = new System.Windows.Forms.TextBox();
+            this.dgvGrade = new System.Windows.Forms.DataGridView();
             this.GId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Gscore = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CoName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tbName = new System.Windows.Forms.TextBox();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.scScreen)).BeginInit();
             this.scScreen.Panel1.SuspendLayout();
             this.scScreen.Panel2.SuspendLayout();
             this.scScreen.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvGrade)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sButtonText)).BeginInit();
             this.sButtonText.Panel1.SuspendLayout();
             this.sButtonText.Panel2.SuspendLayout();
@@ -68,6 +68,7 @@ namespace BD_Ecole_JS
             this.scTextExits.Panel1.SuspendLayout();
             this.scTextExits.Panel2.SuspendLayout();
             this.scTextExits.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGrade)).BeginInit();
             this.SuspendLayout();
             // 
             // scScreen
@@ -84,34 +85,9 @@ namespace BD_Ecole_JS
             // scScreen.Panel2
             // 
             this.scScreen.Panel2.Controls.Add(this.sButtonText);
-            this.scScreen.Size = new System.Drawing.Size(1045, 813);
+            this.scScreen.Size = new System.Drawing.Size(1232, 813);
             this.scScreen.SplitterDistance = 328;
             this.scScreen.TabIndex = 3;
-            // 
-            // dgvGrade
-            // 
-            this.dgvGrade.AllowUserToAddRows = false;
-            this.dgvGrade.AllowUserToDeleteRows = false;
-            this.dgvGrade.ColumnHeadersHeight = 34;
-            this.dgvGrade.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.GId,
-            this.GName,
-            this.Gscore,
-            this.GDate,
-            this.AId,
-            this.StName,
-            this.CoName});
-            this.dgvGrade.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvGrade.Location = new System.Drawing.Point(0, 0);
-            this.dgvGrade.MultiSelect = false;
-            this.dgvGrade.Name = "dgvGrade";
-            this.dgvGrade.ReadOnly = true;
-            this.dgvGrade.RowHeadersVisible = false;
-            this.dgvGrade.RowHeadersWidth = 62;
-            this.dgvGrade.RowTemplate.Height = 28;
-            this.dgvGrade.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvGrade.Size = new System.Drawing.Size(1045, 328);
-            this.dgvGrade.TabIndex = 0;
             // 
             // sButtonText
             // 
@@ -129,16 +105,16 @@ namespace BD_Ecole_JS
             // sButtonText.Panel2
             // 
             this.sButtonText.Panel2.Controls.Add(this.scTextExits);
-            this.sButtonText.Size = new System.Drawing.Size(1045, 481);
+            this.sButtonText.Size = new System.Drawing.Size(1232, 481);
             this.sButtonText.SplitterDistance = 85;
             this.sButtonText.TabIndex = 19;
             // 
             // bDel
             // 
             this.bDel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.bDel.Location = new System.Drawing.Point(698, 0);
+            this.bDel.Location = new System.Drawing.Point(814, 0);
             this.bDel.Name = "bDel";
-            this.bDel.Size = new System.Drawing.Size(349, 85);
+            this.bDel.Size = new System.Drawing.Size(407, 85);
             this.bDel.TabIndex = 4;
             this.bDel.Text = "Delete";
             this.bDel.UseVisualStyleBackColor = true;
@@ -147,9 +123,9 @@ namespace BD_Ecole_JS
             // bModi
             // 
             this.bModi.Dock = System.Windows.Forms.DockStyle.Left;
-            this.bModi.Location = new System.Drawing.Point(349, 0);
+            this.bModi.Location = new System.Drawing.Point(407, 0);
             this.bModi.Name = "bModi";
-            this.bModi.Size = new System.Drawing.Size(349, 85);
+            this.bModi.Size = new System.Drawing.Size(407, 85);
             this.bModi.TabIndex = 3;
             this.bModi.Text = "Modify";
             this.bModi.UseVisualStyleBackColor = true;
@@ -160,7 +136,7 @@ namespace BD_Ecole_JS
             this.bAdd.Dock = System.Windows.Forms.DockStyle.Left;
             this.bAdd.Location = new System.Drawing.Point(0, 0);
             this.bAdd.Name = "bAdd";
-            this.bAdd.Size = new System.Drawing.Size(349, 85);
+            this.bAdd.Size = new System.Drawing.Size(407, 85);
             this.bAdd.TabIndex = 2;
             this.bAdd.Text = "Add";
             this.bAdd.UseVisualStyleBackColor = true;
@@ -190,9 +166,23 @@ namespace BD_Ecole_JS
             // 
             this.scTextExits.Panel2.Controls.Add(this.bCan);
             this.scTextExits.Panel2.Controls.Add(this.bConf);
-            this.scTextExits.Size = new System.Drawing.Size(1045, 392);
+            this.scTextExits.Size = new System.Drawing.Size(1232, 392);
             this.scTextExits.SplitterDistance = 310;
             this.scTextExits.TabIndex = 37;
+            // 
+            // tbName
+            // 
+            this.tbName.Location = new System.Drawing.Point(86, 141);
+            this.tbName.Name = "tbName";
+            this.tbName.Size = new System.Drawing.Size(263, 26);
+            this.tbName.TabIndex = 52;
+            // 
+            // tbScore
+            // 
+            this.tbScore.Location = new System.Drawing.Point(670, 77);
+            this.tbScore.Name = "tbScore";
+            this.tbScore.Size = new System.Drawing.Size(116, 26);
+            this.tbScore.TabIndex = 51;
             // 
             // label7
             // 
@@ -228,12 +218,12 @@ namespace BD_Ecole_JS
             this.dtpDate.Size = new System.Drawing.Size(262, 26);
             this.dtpDate.TabIndex = 43;
             // 
-            // cbCoId
+            // cbAId
             // 
             this.cbAId.FormattingEnabled = true;
             this.cbAId.Location = new System.Drawing.Point(374, 137);
-            this.cbAId.Name = "cbCoId";
-            this.cbAId.Size = new System.Drawing.Size(263, 28);
+            this.cbAId.Name = "cbAId";
+            this.cbAId.Size = new System.Drawing.Size(412, 28);
             this.cbAId.TabIndex = 42;
             // 
             // label3
@@ -265,9 +255,9 @@ namespace BD_Ecole_JS
             // bCan
             // 
             this.bCan.Dock = System.Windows.Forms.DockStyle.Right;
-            this.bCan.Location = new System.Drawing.Point(3, 0);
+            this.bCan.Location = new System.Drawing.Point(-18, 0);
             this.bCan.Name = "bCan";
-            this.bCan.Size = new System.Drawing.Size(521, 78);
+            this.bCan.Size = new System.Drawing.Size(625, 78);
             this.bCan.TabIndex = 35;
             this.bCan.Text = "Cancel";
             this.bCan.UseVisualStyleBackColor = true;
@@ -276,20 +266,38 @@ namespace BD_Ecole_JS
             // bConf
             // 
             this.bConf.Dock = System.Windows.Forms.DockStyle.Right;
-            this.bConf.Location = new System.Drawing.Point(524, 0);
+            this.bConf.Location = new System.Drawing.Point(607, 0);
             this.bConf.Name = "bConf";
-            this.bConf.Size = new System.Drawing.Size(521, 78);
+            this.bConf.Size = new System.Drawing.Size(625, 78);
             this.bConf.TabIndex = 36;
             this.bConf.Text = "Confirm";
             this.bConf.UseVisualStyleBackColor = true;
             this.bConf.Click += new System.EventHandler(this.bConf_Click);
             // 
-            // dtpStartTime
+            // dgvGrade
             // 
-            this.tbScore.Location = new System.Drawing.Point(670, 77);
-            this.tbScore.Name = "dtpStartTime";
-            this.tbScore.Size = new System.Drawing.Size(116, 26);
-            this.tbScore.TabIndex = 51;
+            this.dgvGrade.AllowUserToAddRows = false;
+            this.dgvGrade.AllowUserToDeleteRows = false;
+            this.dgvGrade.ColumnHeadersHeight = 34;
+            this.dgvGrade.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.GId,
+            this.GName,
+            this.Gscore,
+            this.GDate,
+            this.AId,
+            this.StName,
+            this.dataGridViewTextBoxColumn1,
+            this.TName});
+            this.dgvGrade.Location = new System.Drawing.Point(3, 3);
+            this.dgvGrade.MultiSelect = false;
+            this.dgvGrade.Name = "dgvGrade";
+            this.dgvGrade.ReadOnly = true;
+            this.dgvGrade.RowHeadersVisible = false;
+            this.dgvGrade.RowHeadersWidth = 62;
+            this.dgvGrade.RowTemplate.Height = 28;
+            this.dgvGrade.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvGrade.Size = new System.Drawing.Size(1218, 315);
+            this.dgvGrade.TabIndex = 17;
             // 
             // GId
             // 
@@ -345,29 +353,31 @@ namespace BD_Ecole_JS
             this.StName.MinimumWidth = 8;
             this.StName.Name = "StName";
             this.StName.ReadOnly = true;
-            this.StName.Width = 70;
+            this.StName.Width = 120;
             // 
-            // CoName
+            // dataGridViewTextBoxColumn1
             // 
-            this.CoName.DataPropertyName = "CoName";
-            this.CoName.HeaderText = "Course Name";
-            this.CoName.MinimumWidth = 8;
-            this.CoName.Name = "CoName";
-            this.CoName.ReadOnly = true;
-            this.CoName.Width = 130;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "CoName";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Course Name";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 130;
             // 
-            // cbClId
+            // TName
             // 
-            this.tbName.Location = new System.Drawing.Point(86, 141);
-            this.tbName.Name = "cbClId";
-            this.tbName.Size = new System.Drawing.Size(263, 26);
-            this.tbName.TabIndex = 52;
+            this.TName.DataPropertyName = "TName";
+            this.TName.HeaderText = "Teacher Name";
+            this.TName.MinimumWidth = 8;
+            this.TName.Name = "TName";
+            this.TName.ReadOnly = true;
+            this.TName.Width = 150;
             // 
             // GestionGrade
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1045, 813);
+            this.ClientSize = new System.Drawing.Size(1232, 813);
             this.Controls.Add(this.scScreen);
             this.Name = "GestionGrade";
             this.Text = "GestionGrade";
@@ -376,7 +386,6 @@ namespace BD_Ecole_JS
             this.scScreen.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.scScreen)).EndInit();
             this.scScreen.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvGrade)).EndInit();
             this.sButtonText.Panel1.ResumeLayout(false);
             this.sButtonText.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.sButtonText)).EndInit();
@@ -386,6 +395,7 @@ namespace BD_Ecole_JS
             this.scTextExits.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.scTextExits)).EndInit();
             this.scTextExits.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGrade)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -393,7 +403,6 @@ namespace BD_Ecole_JS
         #endregion
 
         private System.Windows.Forms.SplitContainer scScreen;
-        private System.Windows.Forms.DataGridView dgvGrade;
         private System.Windows.Forms.SplitContainer sButtonText;
         private System.Windows.Forms.Button bDel;
         private System.Windows.Forms.Button bModi;
@@ -410,13 +419,15 @@ namespace BD_Ecole_JS
         private System.Windows.Forms.Button bCan;
         private System.Windows.Forms.Button bConf;
         private System.Windows.Forms.TextBox tbScore;
+        private System.Windows.Forms.TextBox tbName;
+        private System.Windows.Forms.DataGridView dgvGrade;
         private System.Windows.Forms.DataGridViewTextBoxColumn GId;
         private System.Windows.Forms.DataGridViewTextBoxColumn GName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Gscore;
         private System.Windows.Forms.DataGridViewTextBoxColumn GDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn AId;
         private System.Windows.Forms.DataGridViewTextBoxColumn StName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CoName;
-        private System.Windows.Forms.TextBox tbName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TName;
     }
 }

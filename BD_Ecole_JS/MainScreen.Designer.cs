@@ -39,6 +39,9 @@ namespace BD_Ecole_JS
             this.tsgCourse = new System.Windows.Forms.ToolStripMenuItem();
             this.tsgAssoc = new System.Windows.Forms.ToolStripMenuItem();
             this.tsCreateSched = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsConsult = new System.Windows.Forms.ToolStripMenuItem();
+            this.tscGrade = new System.Windows.Forms.ToolStripMenuItem();
+            this.tscSchedule = new System.Windows.Forms.ToolStripMenuItem();
             this.tvSchool = new System.Windows.Forms.TreeView();
             this.dgvSchedule = new System.Windows.Forms.DataGridView();
             this.ScheduleID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,12 +60,20 @@ namespace BD_Ecole_JS
             this.AId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tsConsult = new System.Windows.Forms.ToolStripMenuItem();
-            this.tscGrade = new System.Windows.Forms.ToolStripMenuItem();
-            this.tscSchedule = new System.Windows.Forms.ToolStripMenuItem();
+            this.TName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvNoGrade = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.msNav.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSchedule)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrade)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvNoGrade)).BeginInit();
             this.SuspendLayout();
             // 
             // msNav
@@ -75,7 +86,7 @@ namespace BD_Ecole_JS
             this.tsConsult});
             this.msNav.Location = new System.Drawing.Point(0, 0);
             this.msNav.Name = "msNav";
-            this.msNav.Size = new System.Drawing.Size(1821, 33);
+            this.msNav.Size = new System.Drawing.Size(1921, 36);
             this.msNav.TabIndex = 9;
             this.msNav.Text = "menuStrip1";
             // 
@@ -96,49 +107,49 @@ namespace BD_Ecole_JS
             // tsgTeacher
             // 
             this.tsgTeacher.Name = "tsgTeacher";
-            this.tsgTeacher.Size = new System.Drawing.Size(270, 34);
+            this.tsgTeacher.Size = new System.Drawing.Size(205, 34);
             this.tsgTeacher.Text = "Teacher";
             this.tsgTeacher.Click += new System.EventHandler(this.tsgTeacher_Click);
             // 
             // tsgStudent
             // 
             this.tsgStudent.Name = "tsgStudent";
-            this.tsgStudent.Size = new System.Drawing.Size(270, 34);
+            this.tsgStudent.Size = new System.Drawing.Size(205, 34);
             this.tsgStudent.Text = "Student";
             this.tsgStudent.Click += new System.EventHandler(this.tsgStudent_Click);
             // 
             // tsgClass
             // 
             this.tsgClass.Name = "tsgClass";
-            this.tsgClass.Size = new System.Drawing.Size(270, 34);
+            this.tsgClass.Size = new System.Drawing.Size(205, 34);
             this.tsgClass.Text = "Class";
             this.tsgClass.Click += new System.EventHandler(this.tsgClass_Click);
             // 
             // tsgSchedule
             // 
             this.tsgSchedule.Name = "tsgSchedule";
-            this.tsgSchedule.Size = new System.Drawing.Size(270, 34);
+            this.tsgSchedule.Size = new System.Drawing.Size(205, 34);
             this.tsgSchedule.Text = "Schedule";
             this.tsgSchedule.Click += new System.EventHandler(this.tsgSchedule_Click);
             // 
             // tsgGrade
             // 
             this.tsgGrade.Name = "tsgGrade";
-            this.tsgGrade.Size = new System.Drawing.Size(270, 34);
+            this.tsgGrade.Size = new System.Drawing.Size(205, 34);
             this.tsgGrade.Text = "Grade";
             this.tsgGrade.Click += new System.EventHandler(this.tsgGrade_Click);
             // 
             // tsgCourse
             // 
             this.tsgCourse.Name = "tsgCourse";
-            this.tsgCourse.Size = new System.Drawing.Size(270, 34);
+            this.tsgCourse.Size = new System.Drawing.Size(205, 34);
             this.tsgCourse.Text = "Course";
             this.tsgCourse.Click += new System.EventHandler(this.tsgCourse_Click);
             // 
             // tsgAssoc
             // 
             this.tsgAssoc.Name = "tsgAssoc";
-            this.tsgAssoc.Size = new System.Drawing.Size(270, 34);
+            this.tsgAssoc.Size = new System.Drawing.Size(205, 34);
             this.tsgAssoc.Text = "Association";
             this.tsgAssoc.Click += new System.EventHandler(this.tsgAssoc_Click);
             // 
@@ -148,6 +159,29 @@ namespace BD_Ecole_JS
             this.tsCreateSched.Size = new System.Drawing.Size(154, 29);
             this.tsCreateSched.Text = "Create Schedule";
             this.tsCreateSched.Click += new System.EventHandler(this.tsCreateSched_Click);
+            // 
+            // tsConsult
+            // 
+            this.tsConsult.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tscGrade,
+            this.tscSchedule});
+            this.tsConsult.Name = "tsConsult";
+            this.tsConsult.Size = new System.Drawing.Size(88, 29);
+            this.tsConsult.Text = "Consult";
+            // 
+            // tscGrade
+            // 
+            this.tscGrade.Name = "tscGrade";
+            this.tscGrade.Size = new System.Drawing.Size(193, 34);
+            this.tscGrade.Text = "Grades";
+            this.tscGrade.Click += new System.EventHandler(this.tscGrade_Click);
+            // 
+            // tscSchedule
+            // 
+            this.tscSchedule.Name = "tscSchedule";
+            this.tscSchedule.Size = new System.Drawing.Size(193, 34);
+            this.tscSchedule.Text = "Schedules";
+            this.tscSchedule.Click += new System.EventHandler(this.tscSchedule_Click);
             // 
             // tvSchool
             // 
@@ -269,7 +303,8 @@ namespace BD_Ecole_JS
             this.GDate,
             this.AId,
             this.StName,
-            this.dataGridViewTextBoxColumn1});
+            this.dataGridViewTextBoxColumn1,
+            this.TName});
             this.dgvGrade.Location = new System.Drawing.Point(412, 50);
             this.dgvGrade.MultiSelect = false;
             this.dgvGrade.Name = "dgvGrade";
@@ -278,7 +313,7 @@ namespace BD_Ecole_JS
             this.dgvGrade.RowHeadersWidth = 62;
             this.dgvGrade.RowTemplate.Height = 28;
             this.dgvGrade.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvGrade.Size = new System.Drawing.Size(1151, 704);
+            this.dgvGrade.Size = new System.Drawing.Size(1151, 315);
             this.dgvGrade.TabIndex = 15;
             this.dgvGrade.Visible = false;
             // 
@@ -347,34 +382,118 @@ namespace BD_Ecole_JS
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
             this.dataGridViewTextBoxColumn1.Width = 130;
             // 
-            // tsConsult
+            // TName
             // 
-            this.tsConsult.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tscGrade,
-            this.tscSchedule});
-            this.tsConsult.Name = "tsConsult";
-            this.tsConsult.Size = new System.Drawing.Size(88, 29);
-            this.tsConsult.Text = "Consult";
+            this.TName.DataPropertyName = "TName";
+            this.TName.HeaderText = "Teacher Name";
+            this.TName.MinimumWidth = 8;
+            this.TName.Name = "TName";
+            this.TName.ReadOnly = true;
+            this.TName.Width = 150;
             // 
-            // tscGrade
+            // dgvNoGrade
             // 
-            this.tscGrade.Name = "tscGrade";
-            this.tscGrade.Size = new System.Drawing.Size(270, 34);
-            this.tscGrade.Text = "Grades";
-            this.tscGrade.Click += new System.EventHandler(this.tscGrade_Click);
+            this.dgvNoGrade.AllowUserToAddRows = false;
+            this.dgvNoGrade.AllowUserToDeleteRows = false;
+            this.dgvNoGrade.ColumnHeadersHeight = 34;
+            this.dgvNoGrade.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9});
+            this.dgvNoGrade.Location = new System.Drawing.Point(412, 371);
+            this.dgvNoGrade.MultiSelect = false;
+            this.dgvNoGrade.Name = "dgvNoGrade";
+            this.dgvNoGrade.RowHeadersVisible = false;
+            this.dgvNoGrade.RowHeadersWidth = 62;
+            this.dgvNoGrade.RowTemplate.Height = 28;
+            this.dgvNoGrade.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvNoGrade.Size = new System.Drawing.Size(1151, 383);
+            this.dgvNoGrade.TabIndex = 16;
+            this.dgvNoGrade.Visible = false;
+            this.dgvNoGrade.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNoGrade_CellDoubleClick);
+            this.dgvNoGrade.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNoGrade_RowEnter);
             // 
-            // tscSchedule
+            // dataGridViewTextBoxColumn2
             // 
-            this.tscSchedule.Name = "tscSchedule";
-            this.tscSchedule.Size = new System.Drawing.Size(270, 34);
-            this.tscSchedule.Text = "Schedules";
-            this.tscSchedule.Click += new System.EventHandler(this.tscSchedule_Click);
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "GId";
+            this.dataGridViewTextBoxColumn2.HeaderText = "GradeID";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn2.Visible = false;
+            this.dataGridViewTextBoxColumn2.Width = 120;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "GName";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Name";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Width = 153;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Gscore";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Score";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Width = 84;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "GDate";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Date";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.Width = 70;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "AId";
+            this.dataGridViewTextBoxColumn6.HeaderText = "AssociationID";
+            this.dataGridViewTextBoxColumn6.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Width = 50;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "StName";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Student Name";
+            this.dataGridViewTextBoxColumn7.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.Width = 120;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "CoName";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Course Name";
+            this.dataGridViewTextBoxColumn8.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            this.dataGridViewTextBoxColumn8.Width = 130;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "TName";
+            this.dataGridViewTextBoxColumn9.HeaderText = "Teacher Name";
+            this.dataGridViewTextBoxColumn9.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            this.dataGridViewTextBoxColumn9.Width = 150;
             // 
             // MainScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1821, 910);
+            this.ClientSize = new System.Drawing.Size(1921, 992);
+            this.Controls.Add(this.dgvNoGrade);
             this.Controls.Add(this.tvSchool);
             this.Controls.Add(this.msNav);
             this.Controls.Add(this.dgvGrade);
@@ -386,6 +505,7 @@ namespace BD_Ecole_JS
             this.msNav.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSchedule)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrade)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvNoGrade)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -413,6 +533,9 @@ namespace BD_Ecole_JS
         private System.Windows.Forms.DataGridViewTextBoxColumn ClName;
         private System.Windows.Forms.DataGridViewTextBoxColumn CoName;
         private System.Windows.Forms.DataGridView dgvGrade;
+        private System.Windows.Forms.ToolStripMenuItem tsConsult;
+        private System.Windows.Forms.ToolStripMenuItem tscGrade;
+        private System.Windows.Forms.ToolStripMenuItem tscSchedule;
         private System.Windows.Forms.DataGridViewTextBoxColumn GId;
         private System.Windows.Forms.DataGridViewTextBoxColumn GName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Gscore;
@@ -420,9 +543,16 @@ namespace BD_Ecole_JS
         private System.Windows.Forms.DataGridViewTextBoxColumn AId;
         private System.Windows.Forms.DataGridViewTextBoxColumn StName;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.ToolStripMenuItem tsConsult;
-        private System.Windows.Forms.ToolStripMenuItem tscGrade;
-        private System.Windows.Forms.ToolStripMenuItem tscSchedule;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TName;
+        private System.Windows.Forms.DataGridView dgvNoGrade;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
     }
 }
 
