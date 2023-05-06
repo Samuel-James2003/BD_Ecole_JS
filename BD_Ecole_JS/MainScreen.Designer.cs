@@ -416,7 +416,7 @@ namespace BD_Ecole_JS
             this.dgvNoGrade.TabIndex = 16;
             this.dgvNoGrade.Visible = false;
             this.dgvNoGrade.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNoGrade_CellDoubleClick);
-            this.dgvNoGrade.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNoGrade_RowEnter);
+            this.dgvNoGrade.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNoGrade_CellEnter);
             // 
             // dataGridViewTextBoxColumn2
             // 

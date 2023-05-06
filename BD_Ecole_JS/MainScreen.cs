@@ -276,12 +276,6 @@ namespace BD_Ecole_JS
             return coursename;
         }
 
-        private void dgvNoGrade_RowEnter(object sender, DataGridViewCellEventArgs e)
-        {
-
-            //new G_T_Grade(sConnection).Ajouter(name, score, date, AssocID);
-        }
-
         void tvSchool_AfterSelect(object sender, TreeViewEventArgs e)
         {
             dgvGrade.Visible = dgvSchedule.Visible = dgvNoGrade.Visible = false;
@@ -346,8 +340,15 @@ namespace BD_Ecole_JS
                 }
             }
             catch (Exception)
-            { }
+            {
+                //MessageBox.Show("An unexpected error has occured");
+            }
 
+        }
+
+        private void dgvNoGrade_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            //dgvNoGrade_CellDoubleClick(sender, e);
         }
 
         string TimeFormatting(C_T_Schedule p)
