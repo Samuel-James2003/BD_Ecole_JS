@@ -190,12 +190,7 @@ namespace BD_Ecole_JS
                 Activer(true);
                 FillDGV();
             }
-
-
-
         }
-
-
     }
 }
 

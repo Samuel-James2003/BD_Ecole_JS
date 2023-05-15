@@ -310,45 +310,12 @@ namespace BD_Ecole_JS
 
         private void dgvNoGrade_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            try
-            {
-                DateTime date;
-                string name = dgvNoGrade.Rows[e.RowIndex].Cells[1].Value.ToString();
-                int score = int.Parse(dgvNoGrade.Rows[e.RowIndex].Cells[2].Value.ToString());
-                int AssocID = int.Parse(dgvNoGrade.Rows[e.RowIndex].Cells[4].Value.ToString());
-                var possible = DateTime.TryParse(dgvNoGrade.Rows[e.RowIndex].Cells[3].Value.ToString(), out date);
-                if (!possible)
-                {
-                    var res = MessageBox.Show($"Name : {name} \nScore : {score} \nAssociation :  {AssocID} \n!!Date is NULL!! ", "This is going to be added do you confirm", MessageBoxButtons.OKCancel);
-                    if (res == DialogResult.OK)
-                    {
-                        new G_T_Grade(sConnection).Ajouter(name, score, null, AssocID);
-                        Reset();
-                    }
-                    return;
-
-                }
-                else
-                {
-                    var res = MessageBox.Show($"Name : {name} \nScore : {score} \nAssociation :  {AssocID} \nDate : {date.ToShortDateString()} ", "This is going to be added do you confirm", MessageBoxButtons.OKCancel);
-                    if (res == DialogResult.OK)
-                    {
-                        new G_T_Grade(sConnection).Ajouter(name, score, date, AssocID);
-                        Reset();
-                    }
-                    return;
-                }
-            }
-            catch (Exception)
-            {
-                //MessageBox.Show("An unexpected error has occured");
-            }
-
-        }
-
-        private void dgvNoGrade_CellEnter(object sender, DataGridViewCellEventArgs e)
-        {
-            //dgvNoGrade_CellDoubleClick(sender, e);
+            int AssocID = int.Parse(dgvNoGrade.Rows[e.RowIndex].Cells[4].Value.ToString());
+            string Name = dgvNoGrade.Rows[e.RowIndex].Cells[5].Value.ToString();
+            string Class = dgvNoGrade.Rows[e.RowIndex].Cells[6].Value.ToString();
+            Form form = new QuickAddGrade(AssocID, Name, Class);
+            form.ShowDialog();
+            Reset();
         }
 
         string TimeFormatting(C_T_Schedule p)
@@ -399,7 +366,6 @@ namespace BD_Ecole_JS
             bsNoGrade = new BindingSource();
             bsNoGrade.DataSource = dtNoGrade;
             dgvNoGrade.DataSource = bsNoGrade;
-
         }
 
     }

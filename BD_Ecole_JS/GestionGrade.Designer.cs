@@ -30,6 +30,15 @@ namespace BD_Ecole_JS
         private void InitializeComponent()
         {
             this.scScreen = new System.Windows.Forms.SplitContainer();
+            this.dgvGrade = new System.Windows.Forms.DataGridView();
+            this.GId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Gscore = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sButtonText = new System.Windows.Forms.SplitContainer();
             this.bDel = new System.Windows.Forms.Button();
             this.bModi = new System.Windows.Forms.Button();
@@ -47,19 +56,11 @@ namespace BD_Ecole_JS
             this.label1 = new System.Windows.Forms.Label();
             this.bCan = new System.Windows.Forms.Button();
             this.bConf = new System.Windows.Forms.Button();
-            this.dgvGrade = new System.Windows.Forms.DataGridView();
-            this.GId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Gscore = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.scScreen)).BeginInit();
             this.scScreen.Panel1.SuspendLayout();
             this.scScreen.Panel2.SuspendLayout();
             this.scScreen.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGrade)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sButtonText)).BeginInit();
             this.sButtonText.Panel1.SuspendLayout();
             this.sButtonText.Panel2.SuspendLayout();
@@ -68,7 +69,6 @@ namespace BD_Ecole_JS
             this.scTextExits.Panel1.SuspendLayout();
             this.scTextExits.Panel2.SuspendLayout();
             this.scTextExits.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvGrade)).BeginInit();
             this.SuspendLayout();
             // 
             // scScreen
@@ -88,6 +88,105 @@ namespace BD_Ecole_JS
             this.scScreen.Size = new System.Drawing.Size(1232, 813);
             this.scScreen.SplitterDistance = 328;
             this.scScreen.TabIndex = 3;
+            // 
+            // dgvGrade
+            // 
+            this.dgvGrade.AllowUserToAddRows = false;
+            this.dgvGrade.AllowUserToDeleteRows = false;
+            this.dgvGrade.ColumnHeadersHeight = 34;
+            this.dgvGrade.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.GId,
+            this.GName,
+            this.Gscore,
+            this.GDate,
+            this.AId,
+            this.StName,
+            this.dataGridViewTextBoxColumn1,
+            this.TName});
+            this.dgvGrade.Location = new System.Drawing.Point(3, 3);
+            this.dgvGrade.MultiSelect = false;
+            this.dgvGrade.Name = "dgvGrade";
+            this.dgvGrade.ReadOnly = true;
+            this.dgvGrade.RowHeadersVisible = false;
+            this.dgvGrade.RowHeadersWidth = 62;
+            this.dgvGrade.RowTemplate.Height = 28;
+            this.dgvGrade.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvGrade.Size = new System.Drawing.Size(1218, 315);
+            this.dgvGrade.TabIndex = 17;
+            // 
+            // GId
+            // 
+            this.GId.DataPropertyName = "GId";
+            this.GId.HeaderText = "GradeID";
+            this.GId.MinimumWidth = 8;
+            this.GId.Name = "GId";
+            this.GId.ReadOnly = true;
+            this.GId.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.GId.Visible = false;
+            this.GId.Width = 120;
+            // 
+            // GName
+            // 
+            this.GName.DataPropertyName = "GName";
+            this.GName.HeaderText = "Name";
+            this.GName.MinimumWidth = 8;
+            this.GName.Name = "GName";
+            this.GName.ReadOnly = true;
+            this.GName.Width = 153;
+            // 
+            // Gscore
+            // 
+            this.Gscore.DataPropertyName = "Gscore";
+            this.Gscore.HeaderText = "Score";
+            this.Gscore.MinimumWidth = 8;
+            this.Gscore.Name = "Gscore";
+            this.Gscore.ReadOnly = true;
+            this.Gscore.Width = 84;
+            // 
+            // GDate
+            // 
+            this.GDate.DataPropertyName = "GDate";
+            this.GDate.HeaderText = "Date";
+            this.GDate.MinimumWidth = 8;
+            this.GDate.Name = "GDate";
+            this.GDate.ReadOnly = true;
+            this.GDate.Width = 70;
+            // 
+            // AId
+            // 
+            this.AId.DataPropertyName = "AId";
+            this.AId.HeaderText = "AssociationID";
+            this.AId.MinimumWidth = 8;
+            this.AId.Name = "AId";
+            this.AId.ReadOnly = true;
+            this.AId.Width = 50;
+            // 
+            // StName
+            // 
+            this.StName.DataPropertyName = "StName";
+            this.StName.HeaderText = "Student Name";
+            this.StName.MinimumWidth = 8;
+            this.StName.Name = "StName";
+            this.StName.ReadOnly = true;
+            this.StName.Width = 120;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "CoName";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Course Name";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 130;
+            // 
+            // TName
+            // 
+            this.TName.DataPropertyName = "TName";
+            this.TName.HeaderText = "Teacher Name";
+            this.TName.MinimumWidth = 8;
+            this.TName.Name = "TName";
+            this.TName.ReadOnly = true;
+            this.TName.Width = 150;
             // 
             // sButtonText
             // 
@@ -274,105 +373,6 @@ namespace BD_Ecole_JS
             this.bConf.UseVisualStyleBackColor = true;
             this.bConf.Click += new System.EventHandler(this.bConf_Click);
             // 
-            // dgvGrade
-            // 
-            this.dgvGrade.AllowUserToAddRows = false;
-            this.dgvGrade.AllowUserToDeleteRows = false;
-            this.dgvGrade.ColumnHeadersHeight = 34;
-            this.dgvGrade.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.GId,
-            this.GName,
-            this.Gscore,
-            this.GDate,
-            this.AId,
-            this.StName,
-            this.dataGridViewTextBoxColumn1,
-            this.TName});
-            this.dgvGrade.Location = new System.Drawing.Point(3, 3);
-            this.dgvGrade.MultiSelect = false;
-            this.dgvGrade.Name = "dgvGrade";
-            this.dgvGrade.ReadOnly = true;
-            this.dgvGrade.RowHeadersVisible = false;
-            this.dgvGrade.RowHeadersWidth = 62;
-            this.dgvGrade.RowTemplate.Height = 28;
-            this.dgvGrade.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvGrade.Size = new System.Drawing.Size(1218, 315);
-            this.dgvGrade.TabIndex = 17;
-            // 
-            // GId
-            // 
-            this.GId.DataPropertyName = "GId";
-            this.GId.HeaderText = "GradeID";
-            this.GId.MinimumWidth = 8;
-            this.GId.Name = "GId";
-            this.GId.ReadOnly = true;
-            this.GId.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.GId.Visible = false;
-            this.GId.Width = 120;
-            // 
-            // GName
-            // 
-            this.GName.DataPropertyName = "GName";
-            this.GName.HeaderText = "Name";
-            this.GName.MinimumWidth = 8;
-            this.GName.Name = "GName";
-            this.GName.ReadOnly = true;
-            this.GName.Width = 153;
-            // 
-            // Gscore
-            // 
-            this.Gscore.DataPropertyName = "Gscore";
-            this.Gscore.HeaderText = "Score";
-            this.Gscore.MinimumWidth = 8;
-            this.Gscore.Name = "Gscore";
-            this.Gscore.ReadOnly = true;
-            this.Gscore.Width = 84;
-            // 
-            // GDate
-            // 
-            this.GDate.DataPropertyName = "GDate";
-            this.GDate.HeaderText = "Date";
-            this.GDate.MinimumWidth = 8;
-            this.GDate.Name = "GDate";
-            this.GDate.ReadOnly = true;
-            this.GDate.Width = 70;
-            // 
-            // AId
-            // 
-            this.AId.DataPropertyName = "AId";
-            this.AId.HeaderText = "AssociationID";
-            this.AId.MinimumWidth = 8;
-            this.AId.Name = "AId";
-            this.AId.ReadOnly = true;
-            this.AId.Width = 50;
-            // 
-            // StName
-            // 
-            this.StName.DataPropertyName = "StName";
-            this.StName.HeaderText = "Student Name";
-            this.StName.MinimumWidth = 8;
-            this.StName.Name = "StName";
-            this.StName.ReadOnly = true;
-            this.StName.Width = 120;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "CoName";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Course Name";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 130;
-            // 
-            // TName
-            // 
-            this.TName.DataPropertyName = "TName";
-            this.TName.HeaderText = "Teacher Name";
-            this.TName.MinimumWidth = 8;
-            this.TName.Name = "TName";
-            this.TName.ReadOnly = true;
-            this.TName.Width = 150;
-            // 
             // GestionGrade
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -386,6 +386,7 @@ namespace BD_Ecole_JS
             this.scScreen.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.scScreen)).EndInit();
             this.scScreen.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGrade)).EndInit();
             this.sButtonText.Panel1.ResumeLayout(false);
             this.sButtonText.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.sButtonText)).EndInit();
@@ -395,7 +396,6 @@ namespace BD_Ecole_JS
             this.scTextExits.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.scTextExits)).EndInit();
             this.scTextExits.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvGrade)).EndInit();
             this.ResumeLayout(false);
 
         }
