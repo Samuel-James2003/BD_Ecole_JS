@@ -24,7 +24,7 @@ namespace BD_Ecole_JS
             List<C_T_Teacher> lTmp = new G_T_Teacher(sConnection).Lire("N");
             foreach (var p in lTmp)
             {
-                dtTeacher.Rows.Add(p.TeacherID, p.TName + " " + p.TSurname, p.TDoB, p.TEmail);
+                dtTeacher.Rows.Add(p.TeacherID, p.TName + " " + p.TSurname, p.TDoB.ToShortDateString(), p.TEmail);
             }
             bsTeacher = new BindingSource();
             bsTeacher.DataSource = dtTeacher;

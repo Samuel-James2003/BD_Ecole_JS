@@ -67,7 +67,7 @@ namespace BD_Ecole_JS
             List<C_T_Grade> lTmp = new G_T_Grade(sConnection).Lire("N");
             foreach (var p in lTmp)
             {
-                dtGrade.Rows.Add(p.GradeID, p.GName, p.Gscore, p.GDate, p.AssociationID, StudentName(p), CourseNameAndTeacherName(p)[0], CourseNameAndTeacherName(p)[1]);
+                dtGrade.Rows.Add(p.GradeID, p.GName, p.Gscore, GDateIfNull(p).ToShortDateString(), p.AssociationID, StudentName(p), CourseNameAndTeacherName(p)[0], CourseNameAndTeacherName(p)[1]);
             }
             bsGrade = new BindingSource();
             bsGrade.DataSource = dtGrade;
@@ -180,12 +180,12 @@ namespace BD_Ecole_JS
                 if (tbId.Text == "")
                 //Ajout
                 {
-                    AddGrade(tbName.Text, int.Parse(tbScore.Text), dtpDate.Value, Convert_CB_to_Int(cbAId.SelectedItem.ToString()));
+                    AddGrade(tbName.Text, int.Parse(tbScore.Text), dtpDate.Value, Convert_CB_to_Int(cbAId.Text.ToString()));
                 }
                 else
                 //Modification
                 {
-                    new G_T_Grade(sConnection).Modifier(int.Parse(tbId.Text), tbName.Text, int.Parse(tbScore.Text), dtpDate.Value, Convert_CB_to_Int(cbAId.SelectedItem.ToString()));
+                    new G_T_Grade(sConnection).Modifier(int.Parse(tbId.Text), tbName.Text, int.Parse(tbScore.Text), dtpDate.Value, Convert_CB_to_Int(cbAId.Text.ToString()));
                     bsGrade.EndEdit();
                 }
                 Activer(true);

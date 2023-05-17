@@ -47,11 +47,11 @@ namespace BD_Ecole_JS
             this.bCan = new System.Windows.Forms.Button();
             this.bConf = new System.Windows.Forms.Button();
             this.dgvTeacher = new System.Windows.Forms.DataGridView();
+            this.scScreen = new System.Windows.Forms.SplitContainer();
             this.TId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TDob = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.scScreen = new System.Windows.Forms.SplitContainer();
             ((System.ComponentModel.ISupportInitialize)(this.sButtonText)).BeginInit();
             this.sButtonText.Panel1.SuspendLayout();
             this.sButtonText.Panel2.SuspendLayout();
@@ -273,6 +273,24 @@ namespace BD_Ecole_JS
             this.dgvTeacher.Size = new System.Drawing.Size(1006, 319);
             this.dgvTeacher.TabIndex = 0;
             // 
+            // scScreen
+            // 
+            this.scScreen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.scScreen.Location = new System.Drawing.Point(0, 0);
+            this.scScreen.Name = "scScreen";
+            this.scScreen.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // scScreen.Panel1
+            // 
+            this.scScreen.Panel1.Controls.Add(this.dgvTeacher);
+            // 
+            // scScreen.Panel2
+            // 
+            this.scScreen.Panel2.Controls.Add(this.sButtonText);
+            this.scScreen.Size = new System.Drawing.Size(1006, 785);
+            this.scScreen.SplitterDistance = 319;
+            this.scScreen.TabIndex = 0;
+            // 
             // TId
             // 
             this.TId.DataPropertyName = "TId";
@@ -309,25 +327,7 @@ namespace BD_Ecole_JS
             this.TEmail.MinimumWidth = 8;
             this.TEmail.Name = "TEmail";
             this.TEmail.ReadOnly = true;
-            this.TEmail.Width = 84;
-            // 
-            // scScreen
-            // 
-            this.scScreen.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.scScreen.Location = new System.Drawing.Point(0, 0);
-            this.scScreen.Name = "scScreen";
-            this.scScreen.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // scScreen.Panel1
-            // 
-            this.scScreen.Panel1.Controls.Add(this.dgvTeacher);
-            // 
-            // scScreen.Panel2
-            // 
-            this.scScreen.Panel2.Controls.Add(this.sButtonText);
-            this.scScreen.Size = new System.Drawing.Size(1006, 785);
-            this.scScreen.SplitterDistance = 319;
-            this.scScreen.TabIndex = 0;
+            this.TEmail.Width = 150;
             // 
             // GestionTeacher
             // 
@@ -375,10 +375,10 @@ namespace BD_Ecole_JS
         private System.Windows.Forms.Button bCan;
         private System.Windows.Forms.Button bConf;
         private System.Windows.Forms.DataGridView dgvTeacher;
+        private System.Windows.Forms.SplitContainer scScreen;
         private System.Windows.Forms.DataGridViewTextBoxColumn TId;
         private System.Windows.Forms.DataGridViewTextBoxColumn TName;
         private System.Windows.Forms.DataGridViewTextBoxColumn TDob;
         private System.Windows.Forms.DataGridViewTextBoxColumn TEmail;
-        private System.Windows.Forms.SplitContainer scScreen;
     }
 }
