@@ -103,11 +103,12 @@ namespace BD_Ecole_JS
         {
             tbId.Text = cbTId.Text = cbStId.Text = "";
             Activer(false);
-            cbStId.Focus();
+            cbTId.Focus();
         }
 
         private void bModi_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Modifying the association table cascades over to the grade table and schedule table proceed with caution");
             if (dgvAssociation.SelectedRows.Count > 0)
             {
                 tbId.Text = dgvAssociation.SelectedRows[0].Cells["AId"].Value.ToString();
@@ -158,11 +159,6 @@ namespace BD_Ecole_JS
                 Activer(true);
                 FillDGV();
             }
-
-
-
         }
-
-
     }
 }

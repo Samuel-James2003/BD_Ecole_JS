@@ -145,6 +145,7 @@ namespace BD_Ecole_JS
             {
                 tbId.Text = dgvGrade.SelectedRows[0].Cells["GId"].Value.ToString();
                 var pTmp = new G_T_Grade(sConnection).Lire_ID(int.Parse(tbId.Text));
+                tbScore.Text = pTmp.Gscore.ToString();
                 tbName.Text = pTmp.GName.ToString();
                 cbAId.Text = pTmp.AssociationID.ToString();
                 dtpDate.Value = GDateIfNull(pTmp);

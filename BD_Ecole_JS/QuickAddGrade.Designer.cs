@@ -30,7 +30,6 @@ namespace BD_Ecole_JS
         private void InitializeComponent()
         {
             this.bAnul = new System.Windows.Forms.Button();
-            this.bConfirmer = new System.Windows.Forms.Button();
             this.tbName = new System.Windows.Forms.TextBox();
             this.tbScore = new System.Windows.Forms.TextBox();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
@@ -39,6 +38,7 @@ namespace BD_Ecole_JS
             this.lDate = new System.Windows.Forms.Label();
             this.LOCKED_Name = new System.Windows.Forms.Label();
             this.LOCKED_Class = new System.Windows.Forms.Label();
+            this.bConfirmer = new ColourFullButtons.ButtonColore();
             this.SuspendLayout();
             // 
             // bAnul
@@ -49,16 +49,6 @@ namespace BD_Ecole_JS
             this.bAnul.TabIndex = 0;
             this.bAnul.Text = "Annuler";
             this.bAnul.UseVisualStyleBackColor = true;
-            // 
-            // bConfirmer
-            // 
-            this.bConfirmer.Location = new System.Drawing.Point(587, 244);
-            this.bConfirmer.Name = "bConfirmer";
-            this.bConfirmer.Size = new System.Drawing.Size(201, 74);
-            this.bConfirmer.TabIndex = 1;
-            this.bConfirmer.Text = "Confirmer";
-            this.bConfirmer.UseVisualStyleBackColor = true;
-            this.bConfirmer.Click += new System.EventHandler(this.bConfirmer_Click);
             // 
             // tbName
             // 
@@ -110,23 +100,40 @@ namespace BD_Ecole_JS
             // 
             // LOCKED_Name
             // 
+            this.LOCKED_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LOCKED_Name.Location = new System.Drawing.Point(18, 21);
             this.LOCKED_Name.Name = "LOCKED_Name";
             this.LOCKED_Name.Size = new System.Drawing.Size(205, 70);
             this.LOCKED_Name.TabIndex = 8;
             // 
-            // LOCKED_CLASS
+            // LOCKED_Class
             // 
+            this.LOCKED_Class.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LOCKED_Class.Location = new System.Drawing.Point(583, 21);
-            this.LOCKED_Class.Name = "LOCKED_CLASS";
+            this.LOCKED_Class.Name = "LOCKED_Class";
             this.LOCKED_Class.Size = new System.Drawing.Size(205, 70);
             this.LOCKED_Class.TabIndex = 9;
+            // 
+            // bConfirmer
+            // 
+            this.bConfirmer.CDroite = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.bConfirmer.CGauche = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.bConfirmer.Location = new System.Drawing.Point(582, 236);
+            this.bConfirmer.Name = "bConfirmer";
+            this.bConfirmer.Size = new System.Drawing.Size(206, 82);
+            this.bConfirmer.TabIndex = 10;
+            this.bConfirmer.TDroite = 255;
+            this.bConfirmer.Text = "Confimer";
+            this.bConfirmer.TGauche = 255;
+            this.bConfirmer.UseVisualStyleBackColor = true;
+            this.bConfirmer.Click += new System.EventHandler(this.bConfirmer_Click);
             // 
             // QuickAddGrade
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 330);
+            this.Controls.Add(this.bConfirmer);
             this.Controls.Add(this.LOCKED_Class);
             this.Controls.Add(this.LOCKED_Name);
             this.Controls.Add(this.lDate);
@@ -135,7 +142,6 @@ namespace BD_Ecole_JS
             this.Controls.Add(this.dtpDate);
             this.Controls.Add(this.tbScore);
             this.Controls.Add(this.tbName);
-            this.Controls.Add(this.bConfirmer);
             this.Controls.Add(this.bAnul);
             this.Name = "QuickAddGrade";
             this.Text = "QuickAddGrade";
@@ -147,7 +153,6 @@ namespace BD_Ecole_JS
         #endregion
 
         private System.Windows.Forms.Button bAnul;
-        private System.Windows.Forms.Button bConfirmer;
         private System.Windows.Forms.TextBox tbName;
         private System.Windows.Forms.TextBox tbScore;
         private System.Windows.Forms.DateTimePicker dtpDate;
@@ -156,5 +161,6 @@ namespace BD_Ecole_JS
         private System.Windows.Forms.Label lDate;
         private System.Windows.Forms.Label LOCKED_Name;
         private System.Windows.Forms.Label LOCKED_Class;
+        private ColourFullButtons.ButtonColore bConfirmer;
     }
 }

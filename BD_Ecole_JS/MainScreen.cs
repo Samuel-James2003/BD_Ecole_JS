@@ -15,8 +15,8 @@ namespace BD_Ecole_JS
         DataTable dtGrade, dtSchedule, dtNoGrade;
         BindingSource bsGrade, bsSchedule, bsNoGrade;
         List<C_T_Association> Links = new List<C_T_Association>();
-        //List<C_T_Grade> Grades = new List<C_T_Grade>();
         List<int> IdsInLink = new List<int>();
+        string Info = "";
 
         public MainScreen()
         {
@@ -303,6 +303,7 @@ namespace BD_Ecole_JS
                 if (HasAssocWithNoGrade(ConvertTreeNodeToInt(e.Node.Text)))
                     dgvNoGrade.Visible = true;
                 dgvGrade.Visible = true;
+                Info = e.Node.Text;
                 Grade(e.Node.Text);
             }
 
@@ -344,7 +345,6 @@ namespace BD_Ecole_JS
         {
             IdsInLink.Clear();
 
-
             foreach (var Grade in new G_T_Grade(sConnection).Lire("N"))
                 IdsInLink.Add(Grade.AssociationID);
             foreach (var Assoc in new G_T_Association(sConnection).Lire("N"))
@@ -359,14 +359,16 @@ namespace BD_Ecole_JS
 
         void Reset()
         {
-            bsGrade = new BindingSource();
-            bsGrade.DataSource = dtGrade;
-            dgvGrade.DataSource = bsGrade;
+            dtGrade.Clear();
+            dtNoGrade.Clear();
+            
+            SetDGVGrade();
+            SetDGVNoGrade();
+            dgvNoGrade.Visible = false;
+            if (HasAssocWithNoGrade(ConvertTreeNodeToInt(Info)))
+                dgvNoGrade.Visible = true;
+            Grade(Info);
 
-            bsNoGrade = new BindingSource();
-            bsNoGrade.DataSource = dtNoGrade;
-            dgvNoGrade.DataSource = bsNoGrade;
         }
-
     }
 }
