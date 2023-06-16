@@ -21,10 +21,11 @@ namespace BD_Ecole_JS
             dtTeacher.Columns.Add(new DataColumn("TName"));
             dtTeacher.Columns.Add(new DataColumn("TDob"));
             dtTeacher.Columns.Add(new DataColumn("TEmail"));
+            dtTeacher.Columns.Add(new DataColumn("TDiploma"));
             List<C_T_Teacher> lTmp = new G_T_Teacher(sConnection).Lire("N");
             foreach (var p in lTmp)
             {
-                dtTeacher.Rows.Add(p.TeacherID, p.TName + " " + p.TSurname, p.TDoB.ToShortDateString(), p.TEmail);
+                dtTeacher.Rows.Add(p.TeacherID, p.TName + " " + p.TSurname, p.TDoB.ToShortDateString(), p.TEmail, p.TDiploma);
             }
             bsTeacher = new BindingSource();
             bsTeacher.DataSource = dtTeacher;
@@ -58,7 +59,7 @@ namespace BD_Ecole_JS
         {
             dgvTeacher.Enabled = lPrincipal;
             bAdd.Enabled = bModi.Enabled = bDel.Enabled = lPrincipal;
-            tbName.Enabled = tbSurname.Enabled = dtpDob.Enabled = tbEmail.Enabled = !lPrincipal;
+            tbName.Enabled = tbSurname.Enabled = dtpDob.Enabled = tbEmail.Enabled = tbDiploma.Enabled = !lPrincipal;
             bConf.Enabled = bCan.Enabled = !lPrincipal;
         }
 
@@ -69,9 +70,9 @@ namespace BD_Ecole_JS
             bsTeacher.RemoveCurrent();
         }
 
-        void AddTeacher(string name, string surname, DateTime DoB, string email)
+        void AddTeacher(string name, string surname, DateTime DoB, string email, string diploma)
         {
-            int iID = new G_T_Teacher(sConnection).Ajouter(name, surname, DoB, email);
+            int iID = new G_T_Teacher(sConnection).Ajouter(name, surname, DoB, email, diploma);
             tbId.Text = iID.ToString();
             dtTeacher.Rows.Add(iID, name + " " + surname, DoB, email);
         }
@@ -94,6 +95,7 @@ namespace BD_Ecole_JS
                 tbSurname.Text = pTmp.TSurname;
                 dtpDob.Value = pTmp.TDoB;
                 tbEmail.Text = pTmp.TEmail;
+                tbDiploma.Text = pTmp.TDiploma;
                 Activer(false);
             }
             else
@@ -123,12 +125,12 @@ namespace BD_Ecole_JS
                 if (tbId.Text == "")
                 //Ajout
                 {
-                    AddTeacher(tbName.Text, tbSurname.Text, dtpDob.Value,tbEmail.Text);
+                    AddTeacher(tbName.Text, tbSurname.Text, dtpDob.Value,tbEmail.Text,tbDiploma.Text);
                 }
                 else
                 //Modification
                 {
-                    new G_T_Teacher(sConnection).Modifier(int.Parse(tbId.Text), tbName.Text, tbSurname.Text, dtpDob.Value,tbEmail.Text);
+                    new G_T_Teacher(sConnection).Modifier(int.Parse(tbId.Text), tbName.Text, tbSurname.Text, dtpDob.Value,tbEmail.Text,tbDiploma.Text);
                     dgvTeacher.SelectedRows[0].Cells["TName"].Value = tbName.Text + " " + tbSurname.Text;
                     bsTeacher.EndEdit();
 

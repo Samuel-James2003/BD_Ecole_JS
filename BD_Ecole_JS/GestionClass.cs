@@ -115,14 +115,10 @@ namespace BD_Ecole_JS
                     new G_T_Class(sConnection).Modifier(int.Parse(tbId.Text), tbName.Text, tbLevel.Text);
                     dgvClass.SelectedRows[0].Cells["ClName"].Value = tbName.Text;
                     bsClass.EndEdit();
-
                 }
                 Activer(true);
                 FillDGV();
             }
-
-
-
         }
     }
 }

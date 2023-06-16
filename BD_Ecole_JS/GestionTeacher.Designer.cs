@@ -52,6 +52,9 @@ namespace BD_Ecole_JS
             this.TName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TDob = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TDiploma = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label6 = new System.Windows.Forms.Label();
+            this.tbDiploma = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.sButtonText)).BeginInit();
             this.sButtonText.Panel1.SuspendLayout();
             this.sButtonText.Panel2.SuspendLayout();
@@ -129,6 +132,8 @@ namespace BD_Ecole_JS
             // 
             // scTextExits.Panel1
             // 
+            this.scTextExits.Panel1.Controls.Add(this.label6);
+            this.scTextExits.Panel1.Controls.Add(this.tbDiploma);
             this.scTextExits.Panel1.Controls.Add(this.label5);
             this.scTextExits.Panel1.Controls.Add(this.tbEmail);
             this.scTextExits.Panel1.Controls.Add(this.dtpDob);
@@ -260,7 +265,8 @@ namespace BD_Ecole_JS
             this.TId,
             this.TName,
             this.TDob,
-            this.TEmail});
+            this.TEmail,
+            this.TDiploma});
             this.dgvTeacher.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvTeacher.Location = new System.Drawing.Point(0, 0);
             this.dgvTeacher.MultiSelect = false;
@@ -329,6 +335,31 @@ namespace BD_Ecole_JS
             this.TEmail.ReadOnly = true;
             this.TEmail.Width = 150;
             // 
+            // TDiploma
+            // 
+            this.TDiploma.DataPropertyName = "TDiploma";
+            this.TDiploma.HeaderText = "Diploma";
+            this.TDiploma.MinimumWidth = 8;
+            this.TDiploma.Name = "TDiploma";
+            this.TDiploma.ReadOnly = true;
+            this.TDiploma.Width = 150;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(656, 62);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(67, 20);
+            this.label6.TabIndex = 46;
+            this.label6.Text = "Diploma";
+            // 
+            // tbDiploma
+            // 
+            this.tbDiploma.Location = new System.Drawing.Point(660, 85);
+            this.tbDiploma.Name = "tbDiploma";
+            this.tbDiploma.Size = new System.Drawing.Size(264, 26);
+            this.tbDiploma.TabIndex = 45;
+            // 
             // GestionTeacher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -380,5 +411,8 @@ namespace BD_Ecole_JS
         private System.Windows.Forms.DataGridViewTextBoxColumn TName;
         private System.Windows.Forms.DataGridViewTextBoxColumn TDob;
         private System.Windows.Forms.DataGridViewTextBoxColumn TEmail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TDiploma;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox tbDiploma;
     }
 }

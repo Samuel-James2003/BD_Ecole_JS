@@ -319,6 +319,12 @@ namespace BD_Ecole_JS
             Reset();
         }
 
+        private void bRefresh_Click(object sender, EventArgs e)
+        {
+            tvSchool.Nodes.Clear();
+            MainScreen_Load(sender, e);
+        }
+
         string TimeFormatting(C_T_Schedule p)
         {
             string duration;
@@ -370,5 +376,7 @@ namespace BD_Ecole_JS
             Grade(Info);
 
         }
+
+
     }
 }

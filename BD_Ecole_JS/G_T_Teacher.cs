@@ -21,10 +21,10 @@ namespace Projet_BDEcole.Gestion
    : base(sChaineConnexion)
   { }
   #endregion
-  public int Ajouter(string TName, string TSurname, DateTime TDoB, string TEmail)
-  { return new A_T_Teacher(ChaineConnexion).Ajouter(TName, TSurname, TDoB, TEmail); }
-  public int Modifier(int TeacherID, string TName, string TSurname, DateTime TDoB, string TEmail)
-  { return new A_T_Teacher(ChaineConnexion).Modifier(TeacherID, TName, TSurname, TDoB, TEmail); }
+  public int Ajouter(string TName, string TSurname, DateTime TDoB, string TEmail,string TDiploma)
+  { return new A_T_Teacher(ChaineConnexion).Ajouter(TName, TSurname, TDoB, TEmail, TDiploma); }
+  public int Modifier(int TeacherID, string TName, string TSurname, DateTime TDoB, string TEmail, string TDiploma)
+  { return new A_T_Teacher(ChaineConnexion).Modifier(TeacherID, TName, TSurname, TDoB, TEmail, TDiploma); }
   public List<C_T_Teacher> Lire(string Index)
   { return new A_T_Teacher(ChaineConnexion).Lire(Index); }
   public C_T_Teacher Lire_ID(int TeacherID)

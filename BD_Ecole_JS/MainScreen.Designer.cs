@@ -70,6 +70,7 @@ namespace BD_Ecole_JS
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bRefresh = new ColourFullButtons.ButtonColore();
             this.msNav.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSchedule)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrade)).BeginInit();
@@ -87,7 +88,7 @@ namespace BD_Ecole_JS
             this.tsConsult});
             this.msNav.Location = new System.Drawing.Point(0, 0);
             this.msNav.Name = "msNav";
-            this.msNav.Size = new System.Drawing.Size(1670, 36);
+            this.msNav.Size = new System.Drawing.Size(1670, 33);
             this.msNav.TabIndex = 9;
             this.msNav.Text = "menuStrip1";
             // 
@@ -109,7 +110,7 @@ namespace BD_Ecole_JS
             // 
             this.tsgTeacher.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.tsgTeacher.Name = "tsgTeacher";
-            this.tsgTeacher.Size = new System.Drawing.Size(270, 34);
+            this.tsgTeacher.Size = new System.Drawing.Size(205, 34);
             this.tsgTeacher.Text = "Teacher";
             this.tsgTeacher.Click += new System.EventHandler(this.tsgTeacher_Click);
             // 
@@ -117,7 +118,7 @@ namespace BD_Ecole_JS
             // 
             this.tsgStudent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.tsgStudent.Name = "tsgStudent";
-            this.tsgStudent.Size = new System.Drawing.Size(270, 34);
+            this.tsgStudent.Size = new System.Drawing.Size(205, 34);
             this.tsgStudent.Text = "Student";
             this.tsgStudent.Click += new System.EventHandler(this.tsgStudent_Click);
             // 
@@ -125,7 +126,7 @@ namespace BD_Ecole_JS
             // 
             this.tsgClass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.tsgClass.Name = "tsgClass";
-            this.tsgClass.Size = new System.Drawing.Size(270, 34);
+            this.tsgClass.Size = new System.Drawing.Size(205, 34);
             this.tsgClass.Text = "Class";
             this.tsgClass.Click += new System.EventHandler(this.tsgClass_Click);
             // 
@@ -133,7 +134,7 @@ namespace BD_Ecole_JS
             // 
             this.tsgSchedule.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.tsgSchedule.Name = "tsgSchedule";
-            this.tsgSchedule.Size = new System.Drawing.Size(270, 34);
+            this.tsgSchedule.Size = new System.Drawing.Size(205, 34);
             this.tsgSchedule.Text = "Schedule";
             this.tsgSchedule.Click += new System.EventHandler(this.tsgSchedule_Click);
             // 
@@ -141,7 +142,7 @@ namespace BD_Ecole_JS
             // 
             this.tsgGrade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.tsgGrade.Name = "tsgGrade";
-            this.tsgGrade.Size = new System.Drawing.Size(270, 34);
+            this.tsgGrade.Size = new System.Drawing.Size(205, 34);
             this.tsgGrade.Text = "Grade";
             this.tsgGrade.Click += new System.EventHandler(this.tsgGrade_Click);
             // 
@@ -149,7 +150,7 @@ namespace BD_Ecole_JS
             // 
             this.tsgCourse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.tsgCourse.Name = "tsgCourse";
-            this.tsgCourse.Size = new System.Drawing.Size(270, 34);
+            this.tsgCourse.Size = new System.Drawing.Size(205, 34);
             this.tsgCourse.Text = "Course";
             this.tsgCourse.Click += new System.EventHandler(this.tsgCourse_Click);
             // 
@@ -157,7 +158,7 @@ namespace BD_Ecole_JS
             // 
             this.tsgAssoc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.tsgAssoc.Name = "tsgAssoc";
-            this.tsgAssoc.Size = new System.Drawing.Size(270, 34);
+            this.tsgAssoc.Size = new System.Drawing.Size(205, 34);
             this.tsgAssoc.Text = "Association";
             this.tsgAssoc.Click += new System.EventHandler(this.tsgAssoc_Click);
             // 
@@ -181,7 +182,7 @@ namespace BD_Ecole_JS
             // 
             this.tscGrade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.tscGrade.Name = "tscGrade";
-            this.tscGrade.Size = new System.Drawing.Size(270, 34);
+            this.tscGrade.Size = new System.Drawing.Size(193, 34);
             this.tscGrade.Text = "Grades";
             this.tscGrade.Click += new System.EventHandler(this.tscGrade_Click);
             // 
@@ -189,7 +190,7 @@ namespace BD_Ecole_JS
             // 
             this.tscSchedule.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.tscSchedule.Name = "tscSchedule";
-            this.tscSchedule.Size = new System.Drawing.Size(270, 34);
+            this.tscSchedule.Size = new System.Drawing.Size(193, 34);
             this.tscSchedule.Text = "Schedules";
             this.tscSchedule.Click += new System.EventHandler(this.tscSchedule_Click);
             // 
@@ -502,11 +503,26 @@ namespace BD_Ecole_JS
             this.dataGridViewTextBoxColumn9.ReadOnly = true;
             this.dataGridViewTextBoxColumn9.Width = 150;
             // 
+            // bRefresh
+            // 
+            this.bRefresh.CDroite = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.bRefresh.CGauche = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.bRefresh.Location = new System.Drawing.Point(21, 760);
+            this.bRefresh.Name = "bRefresh";
+            this.bRefresh.Size = new System.Drawing.Size(445, 66);
+            this.bRefresh.TabIndex = 17;
+            this.bRefresh.TDroite = 255;
+            this.bRefresh.Text = "Refresh";
+            this.bRefresh.TGauche = 255;
+            this.bRefresh.UseVisualStyleBackColor = true;
+            this.bRefresh.Click += new System.EventHandler(this.bRefresh_Click);
+            // 
             // MainScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1670, 816);
+            this.ClientSize = new System.Drawing.Size(1670, 866);
+            this.Controls.Add(this.bRefresh);
             this.Controls.Add(this.dgvNoGrade);
             this.Controls.Add(this.tvSchool);
             this.Controls.Add(this.msNav);
@@ -567,6 +583,7 @@ namespace BD_Ecole_JS
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private ColourFullButtons.ButtonColore bRefresh;
     }
 }
 
